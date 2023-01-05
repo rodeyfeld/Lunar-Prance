@@ -3,6 +3,8 @@ extends Node2D
 class_name Base
 
 @onready var ground_path = $GroundPath
+@onready var terrain1 = $Terrain1
+@onready var terrain2 = $Terrain2
 var path_follow_2d = null
 var bat
 const bat_scene = preload("res://actor/enemy/bat/bat.tscn")
@@ -25,3 +27,10 @@ func _physics_process(delta):
 			print("emit")
 			emit_signal("update_score")
 		path_follow_2d.progress_ratio = 0.0
+	
+	if terrain1.position.x <= -640:
+		terrain1.position.x = 640
+	elif terrain2.position.x <= -640:
+		terrain2.position.x = 640  
+	terrain1.position.x -= delta * 100
+	terrain2.position.x -= delta * 100
