@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://c23s2fvkkdoea"]
+[gd_scene load_steps=5 format=3 uid="uid://c23s2fvkkdoea"]
 
 [ext_resource type="PackedScene" uid="uid://dia1ev0hf41a7" path="res://level/base.tscn" id="1_uoa32"]
 [ext_resource type="Script" path="res://level/level_1.gd" id="2_okkl8"]
+[ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="4_6ovpq"]
+[ext_resource type="PackedScene" uid="uid://c5gmw47c0nceb" path="res://actor/enemy/bat/bat.tscn" id="4_oxe6h"]
 
 [node name="Level1" instance=ExtResource("1_uoa32")]
 script = ExtResource("2_okkl8")
+
+[node name="player" parent="." index="3" instance=ExtResource("4_6ovpq")]
+position = Vector2(33, 229)
+
+[node name="bat" parent="." index="4" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("4_oxe6h")]
+position = Vector2(703, 247)
+path_to_follow = NodePath("../Path2D")

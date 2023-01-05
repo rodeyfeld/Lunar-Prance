@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5gmw47c0nceb"]
+
+[ext_resource type="PackedScene" uid="uid://cj4h38k3gfex7" path="res://actor/enemy/enemy.tscn" id="1_5r8yh"]
+[ext_resource type="Texture2D" uid="uid://dgnd082b5hxrj" path="res://assets/enemy/Blue_Flying.png" id="2_ble2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t47uv"]
+atlas = ExtResource("2_ble2h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by6k7"]
+atlas = ExtResource("2_ble2h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kens"]
+atlas = ExtResource("2_ble2h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxkus"]
+atlas = ExtResource("2_ble2h")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbrqc"]
+atlas = ExtResource("2_ble2h")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdno8"]
+atlas = ExtResource("2_ble2h")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6o86i"]
+animations = [{
+"frames": [SubResource("AtlasTexture_t47uv"), SubResource("AtlasTexture_by6k7"), SubResource("AtlasTexture_7kens"), SubResource("AtlasTexture_cxkus"), SubResource("AtlasTexture_jbrqc"), SubResource("AtlasTexture_sdno8")],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
+
+[node name="bat" instance=ExtResource("1_5r8yh")]
+
+[node name="AnimatedSprite2D" parent="Area2D" index="0"]
+frames = SubResource("SpriteFrames_6o86i")
+animation = &"run"
