@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://drb1rb1ciqt8x"]
 
-[ext_resource type="PackedScene" uid="uid://cjdyesqc7y8xd" path="res://actor/player/player.tscn" id="1_6vegr"]
+[ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="1_6vegr"]
 [ext_resource type="PackedScene" uid="uid://c23s2fvkkdoea" path="res://level/level_1.tscn" id="1_sx1hc"]
 
 [node name="World" type="Node2D"]
@@ -8,4 +8,4 @@
 [node name="Level1" parent="." instance=ExtResource("1_sx1hc")]
 
 [node name="Player" parent="." instance=ExtResource("1_6vegr")]
-position = Vector2(91, 228)
+position = Vector2(56, 221)
