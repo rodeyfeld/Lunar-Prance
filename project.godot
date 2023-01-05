@@ -1,0 +1,53 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "CharacterBody2D",
+"class": &"Actor",
+"language": &"GDScript",
+"path": "res://actor/actor.gd"
+}, {
+"base": "Node2D",
+"class": &"Base",
+"language": &"GDScript",
+"path": "res://level/base.gd"
+}, {
+"base": "Actor",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://actor/player/player.gd"
+}]
+_global_script_class_icons={
+"Actor": "",
+"Base": "",
+"Player": ""
+}
+
+[application]
+
+config/name="Ole"
+run/main_scene="res://world.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[input]
+
+jump={
+"deadzone": 0.5,
+"events": [null, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"unicode":0,"echo":false,"script":null)
+]
+}
