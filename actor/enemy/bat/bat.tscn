@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5gmw47c0nceb"]
+[gd_scene load_steps=11 format=3 uid="uid://c5gmw47c0nceb"]
 
 [ext_resource type="PackedScene" uid="uid://cj4h38k3gfex7" path="res://actor/enemy/enemy.tscn" id="1_5r8yh"]
 [ext_resource type="Texture2D" uid="uid://dgnd082b5hxrj" path="res://assets/enemy/Blue_Flying.png" id="2_ble2h"]
@@ -35,8 +35,13 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6jabs"]
+
 [node name="bat" instance=ExtResource("1_5r8yh")]
 
 [node name="AnimatedSprite2D" parent="Area2D" index="0"]
 frames = SubResource("SpriteFrames_6o86i")
 animation = &"run"
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+shape = SubResource("CircleShape2D_6jabs")

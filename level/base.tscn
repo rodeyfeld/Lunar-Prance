@@ -260,7 +260,7 @@ sources/4 = SubResource("TileSetAtlasSource_f7c4c")
 
 [sub_resource type="Curve2D" id="Curve2D_s13u0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 690, 250, 0, 0, 0, 0, -50, 250)
+"points": PackedVector2Array(0, 0, 0, 0, 690, 240, 0, 0, 0, 0, -50, 240)
 }
 point_count = 2
 
