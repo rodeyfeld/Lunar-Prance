@@ -27,10 +27,13 @@ func _physics_process(delta):
 			print("emit")
 			emit_signal("update_score")
 		path_follow_2d.progress_ratio = 0.0
-	
-	if terrain1.position.x <= -640:
-		terrain1.position.x = 640
-	elif terrain2.position.x <= -640:
-		terrain2.position.x = 640  
-	terrain1.position.x -= delta * 100
-	terrain2.position.x -= delta * 100
+	print("t1:", terrain1.position.x)
+	print("t2:", terrain2.position.x)
+	if terrain1.position.x <= -720:
+		terrain1.position.x = 720
+	elif terrain2.position.x <= -720:
+		terrain2.position.x = 720  
+	var terrain_movement = 3
+#	var terrain_movement = floor(delta * 200)
+	terrain1.position.x -= terrain_movement
+	terrain2.position.x -= terrain_movement

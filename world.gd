@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var level = $Level1
+@onready var level = $Base
 @onready var score = $Control/Score
 
 
