@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dia1ev0hf41a7"]
+[gd_scene load_steps=9 format=3 uid="uid://dia1ev0hf41a7"]
 
 [ext_resource type="Script" path="res://level/base.gd" id="1_18kv2"]
 [ext_resource type="Texture2D" uid="uid://dwm0gamn1fpit" path="res://assets/tilemap/free.png" id="2_o6xsf"]
 [ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="3_10ept"]
+[ext_resource type="Texture2D" uid="uid://culv8nu5rh36x" path="res://icon.svg" id="4_4hkdn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f7c4c"]
 texture = ExtResource("2_o6xsf")
@@ -265,6 +266,8 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_wtht6"]
+
 [node name="Base" type="Node2D"]
 script = ExtResource("1_18kv2")
 
@@ -311,3 +314,14 @@ autostart = true
 
 [node name="player" parent="." instance=ExtResource("3_10ept")]
 position = Vector2(33, 229)
+
+[node name="MoonPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_wtht6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MoonPath"]
+position = Vector2(54.1301, 110.935)
+rotation = 2.58147
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPath/PathFollow2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_4hkdn")
