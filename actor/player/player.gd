@@ -11,18 +11,25 @@ func _ready():
 	curr_pos = position
 
 func _physics_process(delta):
-	velocity.y += 4 
+	velocity.y += 6
 	if Input.is_action_just_pressed("jump"):
 		curr_pos = position
 		velocity.y -= 200
 		animation_player.play("jump")
 #	move_and_collide(velocity)
-	print(get_last_slide_collision())
+	if velocity.y > 6:
+		animation_player.play("fall")
+	elif velocity.y == 6:
+		animation_player.play("run")
+	print(velocity)
 #	move_and_collide(velocity * delta)
 	move_and_slide()
 
-func _on_animation_player_animation_finished(anim_name):
-	animation_player.play("run")
+#func _on_animation_player_animation_finished(anim_name):
+#	if anim_name == "":
+#
+#	else:
+#		animation_player.play("run")
 
 
 
