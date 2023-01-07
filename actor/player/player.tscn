@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://wihx5jp6l3tq"]
+[gd_scene load_steps=10 format=3 uid="uid://wihx5jp6l3tq"]
 
 [ext_resource type="Script" path="res://actor/player/player.gd" id="1_ar66k"]
 [ext_resource type="Texture2D" uid="uid://cmj486fsabvq8" path="res://assets/player/spritesheet.png" id="3_sfmoc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdw5h"]
+radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_texxx"]
 radius = 17.0
@@ -20,17 +23,27 @@ tracks/0/keys = {
 "update": 1,
 "values": [20]
 }
-tracks/1/type = "value"
+tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D2:position")
+tracks/1/path = NodePath(".:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath(".:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_feuon"]
@@ -48,18 +61,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [9, 10, 11, 12]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_rjuka"]
@@ -87,8 +88,21 @@ _data = {
 "run": SubResource("Animation_rjuka")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_op40l"]
+radius = 5.09902
+
 [node name="player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 40
 script = ExtResource("1_ar66k")
+
+[node name="FootArea2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FootArea2D"]
+position = Vector2(15, 20)
+shape = SubResource("CircleShape2D_bdw5h")
 
 [node name="Area2D2" type="Area2D" parent="."]
 collision_layer = 2
@@ -101,12 +115,9 @@ vframes = 2
 frame = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+visible = false
 position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_texxx")
-
-[node name="Area2D" type="Area2D" parent="Area2D2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2/Area2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D2"]
 root_node = NodePath("../..")
@@ -115,4 +126,9 @@ libraries = {
 "": SubResource("AnimationLibrary_oxogm")
 }
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 20)
+shape = SubResource("CircleShape2D_op40l")
+
+[connection signal="body_entered" from="FootArea2D" to="." method="_on_foot_area_2d_body_entered"]
 [connection signal="animation_finished" from="Area2D2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

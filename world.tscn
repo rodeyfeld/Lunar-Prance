@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dknknntxopfcr"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_x4qry"]
-[ext_resource type="PackedScene" uid="uid://ctrcaf3beyllm" path="res://level/zone/base_zone.tscn" id="3_fw1uq"]
+[ext_resource type="PackedScene" uid="uid://d4jrqk1qbqpmn" path="res://level/zone/zone_1.tscn" id="2_y41og"]
 [ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="4_np60i"]
 
 [node name="World" type="Node2D"]
 position = Vector2(2, 0)
 script = ExtResource("1_x4qry")
 
-[node name="base_zone" parent="." instance=ExtResource("3_fw1uq")]
+[node name="base_zone" parent="." instance=ExtResource("2_y41og")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -24,9 +24,9 @@ offset_bottom = 23.0
 text = "0"
 
 [node name="player" parent="." instance=ExtResource("4_np60i")]
-position = Vector2(72, 301)
+position = Vector2(0, 244)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-75, -300)
+position = Vector2(-32, -248)
 anchor_mode = 0
 current = true
