@@ -12,6 +12,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		print("jump")
 		animation_player.play("jump")
+	velocity.x = 100
 	move_and_slide()
 
 
