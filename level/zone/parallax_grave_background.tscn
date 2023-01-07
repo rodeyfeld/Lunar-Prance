@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://ptutfnac3mnp"]
+
+[ext_resource type="Texture2D" uid="uid://djoid5wbfp4h4" path="res://assets/The pale moonlight/Background/Back_PineForest.png" id="1_k7yt3"]
+[ext_resource type="Texture2D" uid="uid://dtl07sminif7c" path="res://assets/The pale moonlight/Background/Back_Mountains.png" id="2_njkas"]
+[ext_resource type="Texture2D" uid="uid://cvsw85mf78eop" path="res://assets/The pale moonlight/Background/Back_Mix.png" id="3_pwiur"]
+[ext_resource type="Texture2D" uid="uid://cmmud3xea0b44" path="res://assets/The pale moonlight/Background/Back_Front_Cemetery.png" id="4_unsbw"]
+[ext_resource type="Texture2D" uid="uid://dqcwfyox87dfw" path="res://assets/The pale moonlight/Background/Back_Hills.png" id="5_cffys"]
+
+[node name="ParallaxGraveBackground" type="Node2D"]
+
+[node name="Forest" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Forest"]
+motion_mirroring = Vector2(864, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Forest/ParallaxLayer"]
+position = Vector2(0, 100)
+texture = ExtResource("1_k7yt3")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 864, 32)
+
+[node name="Mountains" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Mountains"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains/ParallaxLayer"]
+position = Vector2(-1, 74)
+texture = ExtResource("2_njkas")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 64)
+
+[node name="BackGraves" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackGraves"]
+motion_mirroring = Vector2(415, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGraves/ParallaxLayer"]
+position = Vector2(0, 82)
+texture = ExtResource("3_pwiur")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 15.5, 415, 69)
+
+[node name="FrontGraves" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="FrontGraves"]
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="FrontGraves/ParallaxLayer"]
+position = Vector2(0, 106.5)
+texture = ExtResource("4_unsbw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 52.5)
+
+[node name="FrontHills" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="FrontHills"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="FrontHills/ParallaxLayer"]
+position = Vector2(641.5, 143.5)
+texture = ExtResource("5_cffys")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 32)

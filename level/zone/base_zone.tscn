@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctrcaf3beyllm"]
+
+[ext_resource type="Texture2D" uid="uid://b2hcwhvpnsi3w" path="res://assets/The pale moonlight/Image Sheets/sky.png" id="1_c3nx6"]
+[ext_resource type="PackedScene" uid="uid://ptutfnac3mnp" path="res://level/zone/parallax_grave_background.tscn" id="2_an776"]
+
+[node name="base_zone" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(470, 182)
+scale = Vector2(629.5, 74.5)
+texture = ExtResource("1_c3nx6")
+hframes = 20
+vframes = 6
+frame = 19
+region_enabled = true
+region_rect = Rect2(640, 0, 32, 32)
+
+[node name="ParallaxGraveBackground" parent="." instance=ExtResource("2_an776")]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
