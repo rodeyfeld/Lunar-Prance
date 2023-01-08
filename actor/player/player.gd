@@ -14,7 +14,7 @@ func _ready():
 
 func _physics_process(delta):
 	velocity.y += 6
-
+	velocity.x = 100
 	if Input.is_action_just_pressed("jump"):
 		if jump_timer.get_time_left() > 0:
 			print("fall")

@@ -10,9 +10,6 @@ script = ExtResource("1_x4qry")
 
 [node name="base_zone" parent="." instance=ExtResource("2_y41og")]
 
-[node name="ParallaxSkyBackground" parent="base_zone" index="0"]
-visible = true
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
