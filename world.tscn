@@ -10,6 +10,9 @@ script = ExtResource("1_x4qry")
 
 [node name="base_zone" parent="." instance=ExtResource("2_y41og")]
 
+[node name="ParallaxSkyBackground" parent="base_zone" index="0"]
+visible = true
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -27,6 +30,11 @@ text = "0"
 position = Vector2(0, 244)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-32, -248)
+position = Vector2(-39, -242)
 anchor_mode = 0
 current = true
+limit_top = 0
+limit_bottom = 360
+
+[editable path="base_zone"]
+[editable path="base_zone/ParallaxGraveBackground"]

@@ -105,19 +105,23 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_op40l"]
-radius = 5.09902
+radius = 5.0
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 40
+floor_block_on_wall = false
+platform_floor_layers = 4294967263
+platform_wall_layers = 8
 script = ExtResource("1_ar66k")
 
 [node name="FootArea2D" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 8
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FootArea2D"]
-position = Vector2(15, 20)
+position = Vector2(15, 21)
 shape = SubResource("CircleShape2D_bdw5h")
 
 [node name="Area2D2" type="Area2D" parent="."]
@@ -131,6 +135,7 @@ vframes = 2
 frame = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+visible = false
 position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_texxx")
 
@@ -141,8 +146,14 @@ libraries = {
 "": SubResource("AnimationLibrary_oxogm")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="FootCollider" type="CollisionShape2D" parent="."]
 position = Vector2(15, 20)
 shape = SubResource("CircleShape2D_op40l")
 
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
 [connection signal="body_entered" from="FootArea2D" to="." method="_on_foot_area_2d_body_entered"]
+[connection signal="body_exited" from="FootArea2D" to="." method="_on_foot_area_2d_body_exited"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
