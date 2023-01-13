@@ -7,22 +7,22 @@ class_name Player
 @onready var foot_collider = $FootCollider
 @onready var foot_area = $FootArea2D
 
+var MAX_SPEED = 100
+
 var is_on_ground = true
 
 func _ready():
-	velocity.x = 100
+	velocity.x = MAX_SPEED
 
 func _physics_process(delta):
-	print(velocity)
 	velocity.y += 6
-	velocity.x = 100
+	velocity.x = MAX_SPEED
 	if Input.is_action_just_pressed("jump"):
 		if jump_timer.get_time_left() > 0:
 			print("fall")
 #			print(overlapping_bodies)
 			if !is_on_ground:
 				foot_collider.set_deferred("disabled", true)
-				print(foot_collider.disabled)
 			jump_timer.stop()
 		else:
 			jump_timer.start()
@@ -46,8 +46,6 @@ func jump():
 func _on_foot_area_2d_body_entered(body):
 	is_on_ground = true
 	foot_collider.set_deferred("disabled", false)
-	print(body, is_on_ground)
-
 
 func _on_jump_timer_timeout():
 	jump()
@@ -55,5 +53,4 @@ func _on_jump_timer_timeout():
 
 func _on_foot_area_2d_body_exited(body):
 	is_on_ground = false
-	print(body, is_on_ground)
 	foot_collider.set_deferred("disabled", false)

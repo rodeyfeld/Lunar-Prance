@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqcwfyox87dfw" path="res://assets/The pale moonlight/Background/Back_Hills.png" id="5_cffys"]
 
 [node name="ParallaxGraveBackground" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Forest" type="ParallaxBackground" parent="."]
 scale = Vector2(2, 2)

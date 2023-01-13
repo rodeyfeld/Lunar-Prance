@@ -1,13 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctrcaf3beyllm"]
+[gd_scene load_steps=11 format=3 uid="uid://ctrcaf3beyllm"]
 
 [ext_resource type="Texture2D" uid="uid://b2hcwhvpnsi3w" path="res://assets/The pale moonlight/Image Sheets/sky.png" id="1_c3nx6"]
-[ext_resource type="PackedScene" uid="uid://ptutfnac3mnp" path="res://level/zone/parallax_grave_background.tscn" id="2_an776"]
+[ext_resource type="Script" path="res://level/zone/base_zone.gd" id="1_gcybe"]
 [ext_resource type="Texture2D" uid="uid://ccoms1esqtb6k" path="res://assets/The pale moonlight/Image Sheets/base_grass_tiles.png" id="2_sq64g"]
+[ext_resource type="Texture2D" uid="uid://b46mbpi1htrv1" path="res://assets/The pale moonlight/Separate images/Sky/Moon_01.png" id="4_d1duq"]
+[ext_resource type="Texture2D" uid="uid://djoid5wbfp4h4" path="res://assets/The pale moonlight/Background/Back_PineForest.png" id="6_1pnlf"]
+[ext_resource type="Texture2D" uid="uid://dtl07sminif7c" path="res://assets/The pale moonlight/Background/Back_Mountains.png" id="7_l3ubc"]
+[ext_resource type="Texture2D" uid="uid://cvsw85mf78eop" path="res://assets/The pale moonlight/Background/Back_Mix.png" id="8_yioii"]
+[ext_resource type="Texture2D" uid="uid://cmmud3xea0b44" path="res://assets/The pale moonlight/Background/Back_Front_Cemetery.png" id="9_tev4b"]
+[ext_resource type="Texture2D" uid="uid://dqcwfyox87dfw" path="res://assets/The pale moonlight/Background/Back_Hills.png" id="10_3abuj"]
+
+[sub_resource type="Curve2D" id="Curve2D_xhg70"]
 
 [node name="base_zone" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_gcybe")
 
 [node name="ParallaxSkyBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxSkyBackground"]
 motion_mirroring = Vector2(640, 0)
@@ -21,6 +30,19 @@ vframes = 6
 frame = 19
 region_enabled = true
 region_rect = Rect2(640, 0, 32, 32)
+
+[node name="CanvasLayer" type="ParallaxBackground" parent="."]
+
+[node name="MoonPath" type="Path2D" parent="CanvasLayer"]
+curve = SubResource("Curve2D_xhg70")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="CanvasLayer/MoonPath"]
+position = Vector2(54.1301, 110.935)
+rotation = 2.58147
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MoonPath/PathFollow2D"]
+texture = ExtResource("4_d1duq")
 
 [node name="ParallaxGroundBackGround" type="ParallaxBackground" parent="."]
 
@@ -51,4 +73,75 @@ vframes = 28
 region_enabled = true
 region_rect = Rect2(0, 32, 32, 32)
 
-[node name="ParallaxGraveBackground" parent="." instance=ExtResource("2_an776")]
+[node name="Forest" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+scroll_base_scale = Vector2(0.2, 0.2)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Forest"]
+motion_mirroring = Vector2(864, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Forest/ParallaxLayer"]
+position = Vector2(0, 81.5)
+texture = ExtResource("6_1pnlf")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 864, 32)
+
+[node name="Mountains" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+scroll_base_scale = Vector2(0.4, 0.4)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Mountains"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains/ParallaxLayer"]
+position = Vector2(-1, 55.5)
+texture = ExtResource("7_l3ubc")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 64)
+
+[node name="BackGraves" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+scroll_base_scale = Vector2(0.6, 0.6)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackGraves"]
+motion_mirroring = Vector2(415, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGraves/ParallaxLayer"]
+position = Vector2(0, 63.5)
+texture = ExtResource("8_yioii")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 15.5, 415, 69)
+
+[node name="FrontGraves" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+scroll_base_scale = Vector2(0.8, 0.8)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="FrontGraves"]
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="FrontGraves/ParallaxLayer"]
+position = Vector2(0, 88)
+texture = ExtResource("9_tev4b")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 52.5)
+
+[node name="FrontHills" type="ParallaxBackground" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="FrontHills"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="FrontHills/ParallaxLayer"]
+position = Vector2(641.5, 125)
+texture = ExtResource("10_3abuj")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 32)

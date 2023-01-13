@@ -10,4 +10,3 @@ extends Node2D
 
 func add_num():
 	score.text = str(int(score.text) + 1)
-	print("update score")

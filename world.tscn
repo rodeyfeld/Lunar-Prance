@@ -10,6 +10,13 @@ script = ExtResource("1_x4qry")
 
 [node name="base_zone" parent="." instance=ExtResource("2_y41og")]
 
+[node name="ParallaxGraveBackground" parent="base_zone" index="4"]
+visible = false
+scale = Vector2(1, 1)
+
+[node name="FrontHills" parent="base_zone" index="9"]
+layer = -99
+
 [node name="Control" type="Control" parent="."]
 visible = false
 layout_mode = 3

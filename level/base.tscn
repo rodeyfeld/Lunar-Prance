@@ -319,7 +319,7 @@ curve = SubResource("Curve2D_s13u0")
 autostart = true
 
 [node name="player" parent="." instance=ExtResource("3_10ept")]
-position = Vector2(33, 229)
+position = Vector2(0, 229)
 
 [node name="MoonPath" type="Path2D" parent="."]
 visible = false
