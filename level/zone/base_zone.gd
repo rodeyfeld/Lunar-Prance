@@ -12,7 +12,6 @@ func _draw():
 	draw_moon_arc()
 
 func _physics_process(delta):
-	print(get_screen_transform())
 	moon_path_follow_2d.progress_ratio -= .001
 	if moon_path_follow_2d.progress_ratio <= 0.0:
 		moon_path_follow_2d.progress_ratio = 99.0

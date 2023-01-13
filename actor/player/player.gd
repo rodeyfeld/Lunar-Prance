@@ -9,6 +9,8 @@ class_name Player
 
 var MAX_SPEED = 100
 
+
+var jump_modifier = 1.0
 var is_on_ground = true
 
 func _ready():
@@ -19,8 +21,6 @@ func _physics_process(delta):
 	velocity.x = MAX_SPEED
 	if Input.is_action_just_pressed("jump"):
 		if jump_timer.get_time_left() > 0:
-			print("fall")
-#			print(overlapping_bodies)
 			if !is_on_ground:
 				foot_collider.set_deferred("disabled", true)
 			jump_timer.stop()
@@ -30,17 +30,16 @@ func _physics_process(delta):
 		animation_player.play("fall")
 	elif velocity.y == 6:
 		animation_player.play("run")
-#	print(velocity)
+	
+	if is_on_floor():
+		jump_modifier = 1
+	elif jump_modifier >= 0:
+		jump_modifier -= .005
+
 	move_and_slide()
 
-#func _on_animation_player_animation_finished(anim_name):
-#	if anim_name == "":
-#
-#	else:
-#		animation_player.play("run")
-
 func jump():
-	velocity.y -= 200
+	velocity.y -= 200 * jump_modifier
 	animation_player.play("jump")
 
 func _on_foot_area_2d_body_entered(body):
