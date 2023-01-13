@@ -13,6 +13,7 @@ func _ready():
 	velocity.x = 100
 
 func _physics_process(delta):
+	print(velocity)
 	velocity.y += 6
 	velocity.x = 100
 	if Input.is_action_just_pressed("jump"):
