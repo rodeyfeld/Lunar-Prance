@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://demuc3xw6og0j"]
+
+[ext_resource type="Script" path="res://actor/enemy/patroller.gd" id="1_8h4y3"]
+
+[sub_resource type="Curve2D" id="Curve2D_hm6vf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 441, 264, 0, 0, 0, 0, 621, 264)
+}
+point_count = 2
+
+[node name="patroller" type="Node2D"]
+script = ExtResource("1_8h4y3")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hm6vf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(441, 264)
+rotates = false
