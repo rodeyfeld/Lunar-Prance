@@ -145,3 +145,5 @@ position = Vector2(641.5, 125)
 texture = ExtResource("10_3abuj")
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 32)
+
+[node name="Patrollers" type="Node2D" parent="."]
