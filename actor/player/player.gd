@@ -53,3 +53,10 @@ func _on_jump_timer_timeout():
 func _on_foot_area_2d_body_exited(body):
 	is_on_ground = false
 	foot_collider.set_deferred("disabled", false)
+
+
+func _on_area_2d_2_area_entered(area):
+	if area.collision_layer == 4:
+		print("hit_enemy")
+	elif area.collision_layer == 128:
+		print("hit collectible")

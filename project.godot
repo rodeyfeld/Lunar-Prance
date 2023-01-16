@@ -64,3 +64,5 @@ jump={
 2d_physics/layer_4="ground"
 2d_physics/layer_5="playerfoot"
 2d_physics/layer_6="platform"
+2d_physics/layer_7="playerhitbox"
+2d_physics/layer_8="collectible"

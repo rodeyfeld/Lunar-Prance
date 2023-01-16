@@ -13,6 +13,9 @@ script = ExtResource("1_x4qry")
 [node name="FrontHills" parent="base_zone" index="8"]
 layer = -99
 
+[node name="PathFollow2D" parent="base_zone/Patrollers/patroller2/Path2D" index="0"]
+position = Vector2(1800, 115)
+
 [node name="Control" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -38,3 +41,5 @@ limit_top = 0
 limit_bottom = 360
 
 [editable path="base_zone"]
+[editable path="base_zone/Patrollers/patroller"]
+[editable path="base_zone/Patrollers/patroller2"]

@@ -127,8 +127,8 @@ position = Vector2(15, 21)
 shape = SubResource("CircleShape2D_bdw5h")
 
 [node name="Area2D2" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 64
+collision_mask = 132
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 texture = ExtResource("3_sfmoc")
@@ -137,7 +137,6 @@ vframes = 2
 frame = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-visible = false
 position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_texxx")
 
@@ -158,4 +157,5 @@ one_shot = true
 
 [connection signal="body_entered" from="FootArea2D" to="." method="_on_foot_area_2d_body_entered"]
 [connection signal="body_exited" from="FootArea2D" to="." method="_on_foot_area_2d_body_exited"]
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
