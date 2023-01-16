@@ -1,10 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctrcaf3beyllm"]
+[gd_scene load_steps=16 format=3 uid="uid://ctrcaf3beyllm"]
 
 [ext_resource type="Texture2D" uid="uid://b2hcwhvpnsi3w" path="res://assets/The pale moonlight/Image Sheets/sky.png" id="1_c3nx6"]
 [ext_resource type="Script" path="res://level/zone/base_zone.gd" id="1_gcybe"]
 [ext_resource type="Texture2D" uid="uid://ccoms1esqtb6k" path="res://assets/The pale moonlight/Image Sheets/base_grass_tiles.png" id="2_sq64g"]
+[ext_resource type="Texture2D" uid="uid://yd6kfgk6ixjv" path="res://assets/The pale moonlight/Separate images/Sky/constellation_01.png" id="4_670u4"]
 [ext_resource type="Texture2D" uid="uid://b46mbpi1htrv1" path="res://assets/The pale moonlight/Separate images/Sky/Moon_01.png" id="4_d1duq"]
+[ext_resource type="Texture2D" uid="uid://waq1egqfnvlg" path="res://assets/The pale moonlight/Separate images/Sky/constellation_02.png" id="4_urch5"]
+[ext_resource type="Texture2D" uid="uid://fkbuv2732g3b" path="res://assets/The pale moonlight/Separate images/Sky/constellation_03.png" id="5_cmpkf"]
 [ext_resource type="Texture2D" uid="uid://djoid5wbfp4h4" path="res://assets/The pale moonlight/Background/Back_PineForest.png" id="6_1pnlf"]
+[ext_resource type="Texture2D" uid="uid://lojlos2x3mpy" path="res://assets/The pale moonlight/Separate images/Sky/constellation_04.png" id="6_4ltw8"]
+[ext_resource type="Texture2D" uid="uid://l4gy0fr8urem" path="res://assets/The pale moonlight/Separate images/Sky/constellation_05.png" id="7_6l6q0"]
 [ext_resource type="Texture2D" uid="uid://dtl07sminif7c" path="res://assets/The pale moonlight/Background/Back_Mountains.png" id="7_l3ubc"]
 [ext_resource type="Texture2D" uid="uid://cvsw85mf78eop" path="res://assets/The pale moonlight/Background/Back_Mix.png" id="8_yioii"]
 [ext_resource type="Texture2D" uid="uid://cmmud3xea0b44" path="res://assets/The pale moonlight/Background/Back_Front_Cemetery.png" id="9_tev4b"]
@@ -31,18 +36,134 @@ frame = 19
 region_enabled = true
 region_rect = Rect2(640, 0, 32, 32)
 
-[node name="CanvasLayer" type="ParallaxBackground" parent="."]
+[node name="StarBackground" type="ParallaxBackground" parent="."]
 
-[node name="MoonPath" type="Path2D" parent="CanvasLayer"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
+texture = ExtResource("4_670u4")
+offset = Vector2(100, 50)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer2"]
+texture = ExtResource("4_urch5")
+offset = Vector2(100, 50)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(599.994, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer3"]
+texture = ExtResource("5_cmpkf")
+offset = Vector2(400, 50)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer4"]
+texture = ExtResource("6_4ltw8")
+offset = Vector2(200, 50)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer5"]
+texture = ExtResource("7_6l6q0")
+offset = Vector2(300, 50)
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer7"]
+texture = ExtResource("6_4ltw8")
+offset = Vector2(300, 50)
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer6"]
+texture = ExtResource("7_6l6q0")
+offset = Vector2(60, 50)
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer8"]
+texture = ExtResource("5_cmpkf")
+offset = Vector2(550, 50)
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer9"]
+texture = ExtResource("5_cmpkf")
+offset = Vector2(100, 125)
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer10"]
+texture = ExtResource("4_urch5")
+offset = Vector2(250, 125)
+
+[node name="ParallaxLayer11" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer11"]
+texture = ExtResource("4_670u4")
+offset = Vector2(200, 125)
+
+[node name="ParallaxLayer12" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer12"]
+texture = ExtResource("6_4ltw8")
+offset = Vector2(350, 125)
+
+[node name="ParallaxLayer13" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer13"]
+texture = ExtResource("7_6l6q0")
+offset = Vector2(500, 125)
+
+[node name="ParallaxLayer14" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer14"]
+texture = ExtResource("4_670u4")
+offset = Vector2(500, 125)
+
+[node name="ParallaxLayer15" type="ParallaxLayer" parent="StarBackground"]
+motion_mirroring = Vector2(600, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer15"]
+texture = ExtResource("4_670u4")
+offset = Vector2(600, 125)
+
+[node name="MoonBackground" type="ParallaxBackground" parent="."]
+
+[node name="MoonPath" type="Path2D" parent="MoonBackground"]
 curve = SubResource("Curve2D_xhg70")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="CanvasLayer/MoonPath"]
+[node name="PathFollow2D" type="PathFollow2D" parent="MoonBackground/MoonPath"]
 position = Vector2(54.1301, 110.935)
 rotation = 2.58147
 rotates = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MoonPath/PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="MoonBackground/MoonPath/PathFollow2D"]
 texture = ExtResource("4_d1duq")
+
+[node name="CloudBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CloudBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer"]
+texture = ExtResource("4_670u4")
+offset = Vector2(100, 50)
 
 [node name="ParallaxGroundBackGround" type="ParallaxBackground" parent="."]
 

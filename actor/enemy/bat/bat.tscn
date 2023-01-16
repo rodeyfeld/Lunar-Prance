@@ -3,50 +3,50 @@
 [ext_resource type="PackedScene" uid="uid://cj4h38k3gfex7" path="res://actor/enemy/enemy.tscn" id="1_5r8yh"]
 [ext_resource type="Texture2D" uid="uid://dg81t701d1jcv" path="res://assets/enemy/Purple_Flying.png" id="2_202h5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gu61"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4d25"]
 atlas = ExtResource("2_202h5")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbftw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_irvjc"]
 atlas = ExtResource("2_202h5")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pjo05"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yvvk"]
 atlas = ExtResource("2_202h5")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j3hac"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew172"]
 atlas = ExtResource("2_202h5")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xb4r0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n070a"]
 atlas = ExtResource("2_202h5")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qxvib"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh1ay"]
 atlas = ExtResource("2_202h5")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qiml4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_563cf"]
 animations = [{
-"frames": [SubResource("AtlasTexture_0gu61"), SubResource("AtlasTexture_tbftw"), SubResource("AtlasTexture_pjo05"), SubResource("AtlasTexture_j3hac"), SubResource("AtlasTexture_xb4r0"), SubResource("AtlasTexture_qxvib")],
+"frames": [SubResource("AtlasTexture_a4d25"), SubResource("AtlasTexture_irvjc"), SubResource("AtlasTexture_8yvvk"), SubResource("AtlasTexture_ew172"), SubResource("AtlasTexture_n070a"), SubResource("AtlasTexture_vh1ay")],
 "loop": true,
 "name": &"default",
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nnbtm"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_abd67"]
 radius = 4.12311
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hwqyu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y2bqi"]
 
 [node name="bat" instance=ExtResource("1_5r8yh")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-frames = SubResource("SpriteFrames_qiml4")
+frames = SubResource("SpriteFrames_563cf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_nnbtm")
+shape = SubResource("CircleShape2D_abd67")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource("CircleShape2D_hwqyu")
+shape = SubResource("CircleShape2D_y2bqi")

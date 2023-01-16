@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dknknntxopfcr"]
+[gd_scene load_steps=6 format=3 uid="uid://dknknntxopfcr"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_x4qry"]
 [ext_resource type="PackedScene" uid="uid://d4jrqk1qbqpmn" path="res://level/zone/zone_1.tscn" id="2_y41og"]
 [ext_resource type="Texture2D" uid="uid://hjsm1i0sn6x7" path="res://assets/hud/HeartUIFull.png" id="4_3dwfq"]
 [ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="4_np60i"]
+[ext_resource type="Texture2D" uid="uid://c72acmuu6rv5p" path="res://assets/hud/HeartUIEmpty.png" id="4_rn22u"]
 
 [node name="World" type="Node2D"]
 position = Vector2(2, 0)
@@ -11,7 +12,10 @@ script = ExtResource("1_x4qry")
 
 [node name="base_zone" parent="." instance=ExtResource("2_y41og")]
 
-[node name="FrontHills" parent="base_zone" index="8"]
+[node name="ParallaxLayer" parent="base_zone/StarBackground" index="0"]
+motion_mirroring = Vector2(1250, 0)
+
+[node name="FrontHills" parent="base_zone" index="13"]
 layer = -99
 
 [node name="player" parent="." instance=ExtResource("4_np60i")]
@@ -41,17 +45,28 @@ offset_right = -62.0
 offset_bottom = 30.0
 text = "0"
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HeartUIEmpty" type="TextureRect" parent="CanvasLayer/Control2"]
+visible = false
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 60.0
-offset_bottom = 60.0
-columns = 3
+offset_right = 184.0
+offset_bottom = 31.0
+texture = ExtResource("4_rn22u")
+stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer"]
-offset_right = 15.0
-offset_bottom = 11.0
+[node name="HeartUIFull" type="TextureRect" parent="CanvasLayer/Control2"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 123.0
+offset_bottom = 31.0
 texture = ExtResource("4_3dwfq")
+stretch_mode = 1
 
 [connection signal="enemy_hit_player" from="player" to="." method="_on_player_enemy_hit_player"]
 

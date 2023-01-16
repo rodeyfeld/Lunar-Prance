@@ -3,6 +3,16 @@ extends Node2D
 #@onready var level = $Base
 @onready var score = $CanvasLayer/Control/Score
 @onready var player = $player
+@onready var health_full = $CanvasLayer/Control2/HeartUIFull
+
+const HEART_UI_WIDTH = 15
+const HEART_UI_HEIGHT = 15
+
+
+func _ready():
+	health_full.size.x = HEART_UI_WIDTH * player.health
+#	health_full.size.y = HEART_UI_HEIGHT * player.health
+	
 
 
 func add_num():
@@ -11,5 +21,8 @@ func add_num():
 
 
 func _on_player_enemy_hit_player():
+	health_full.size.x = HEART_UI_WIDTH * player.health
 	if player.health >= 0:
+		pass
+		
 	

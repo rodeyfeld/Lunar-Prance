@@ -59,6 +59,7 @@ func _on_foot_area_2d_body_exited(_body):
 func _on_area_2d_2_area_entered(area):
 	if area.collision_layer == 4:
 		print("hit_enemy")
+		health -= 1
 		emit_signal("enemy_hit_player")
 	elif area.collision_layer == 128:
 		print("hit collectible")

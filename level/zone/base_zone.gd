@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var moon_path = $CanvasLayer/MoonPath
-@onready var moon_path_follow_2d = $CanvasLayer/MoonPath/PathFollow2D
+@onready var moon_path = $MoonBackground/MoonPath
+@onready var moon_path_follow_2d = $MoonBackground/MoonPath/PathFollow2D
 
 func _ready():
 	var moon_arc_points = draw_moon_arc()
