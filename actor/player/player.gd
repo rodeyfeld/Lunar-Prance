@@ -6,17 +6,18 @@ class_name Player
 @onready var jump_timer = $JumpTimer
 @onready var foot_collider = $FootCollider
 @onready var foot_area = $FootArea2D
-
+@onready @export var health = 5
 var MAX_SPEED = 100
-
-
 var jump_modifier = 1.0
 var is_on_ground = true
+
+
+signal enemy_hit_player
 
 func _ready():
 	velocity.x = MAX_SPEED
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity.y += 6
 	velocity.x = MAX_SPEED
 	if Input.is_action_just_pressed("jump"):
@@ -42,7 +43,7 @@ func jump():
 	velocity.y -= 200 * jump_modifier
 	animation_player.play("jump")
 
-func _on_foot_area_2d_body_entered(body):
+func _on_foot_area_2d_body_entered(_body):
 	is_on_ground = true
 	foot_collider.set_deferred("disabled", false)
 
@@ -50,7 +51,7 @@ func _on_jump_timer_timeout():
 	jump()
 
 
-func _on_foot_area_2d_body_exited(body):
+func _on_foot_area_2d_body_exited(_body):
 	is_on_ground = false
 	foot_collider.set_deferred("disabled", false)
 
@@ -58,5 +59,6 @@ func _on_foot_area_2d_body_exited(body):
 func _on_area_2d_2_area_entered(area):
 	if area.collision_layer == 4:
 		print("hit_enemy")
+		emit_signal("enemy_hit_player")
 	elif area.collision_layer == 128:
 		print("hit collectible")

@@ -48,8 +48,5 @@ frames = SubResource("SpriteFrames_qiml4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_nnbtm")
 
-[node name="Area2D" parent="." index="2"]
-collision_mask = 0
-
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_hwqyu")

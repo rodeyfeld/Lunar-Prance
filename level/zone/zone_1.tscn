@@ -5755,7 +5755,7 @@ position = Vector2(1800, 115)
 
 [node name="bat" parent="Patrollers/patroller2/Path2D/PathFollow2D" index="0" instance=ExtResource("6_ygk7t")]
 
-[node name="Node2D" parent="." index="13" instance=ExtResource("7_mdh8b")]
+[node name="Collectible" parent="Collectibles" index="0" instance=ExtResource("7_mdh8b")]
 position = Vector2(318, 230)
 
 [editable path="Patrollers/patroller"]

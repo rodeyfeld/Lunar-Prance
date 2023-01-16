@@ -147,3 +147,5 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1280, 32)
 
 [node name="Patrollers" type="Node2D" parent="."]
+
+[node name="Collectibles" type="Node2D" parent="."]

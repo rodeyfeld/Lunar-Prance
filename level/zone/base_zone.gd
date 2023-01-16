@@ -11,7 +11,7 @@ func _ready():
 func _draw():
 	draw_moon_arc()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	moon_path_follow_2d.progress_ratio -= .001
 	if moon_path_follow_2d.progress_ratio <= 0.0:
 		moon_path_follow_2d.progress_ratio = 99.0
@@ -21,10 +21,8 @@ func draw_moon_arc():
 	var radius = 300
 	var angle_from = -90
 	var angle_to = 90
-	var color = Color(1.0, 0.0, 0.0)
 	var nb_points = 32
 	var points_arc = PackedVector2Array()
-	var curve = Curve2D.new()
 	for i in range(nb_points + 1):
 		var angle_point = deg_to_rad(angle_from + i * (angle_to-angle_from) / nb_points - 90)
 		points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
