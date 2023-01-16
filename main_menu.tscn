@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://os3wlqovqd6j"]
+
+[ext_resource type="Script" path="res://level/main_menu.gd" id="1_cusly"]
+[ext_resource type="Texture2D" uid="uid://lojlos2x3mpy" path="res://assets/The pale moonlight/Separate images/Sky/constellation_04.png" id="2_5hlt5"]
+[ext_resource type="Texture2D" uid="uid://waq1egqfnvlg" path="res://assets/The pale moonlight/Separate images/Sky/constellation_02.png" id="3_2r67j"]
+[ext_resource type="Texture2D" uid="uid://fkbuv2732g3b" path="res://assets/The pale moonlight/Separate images/Sky/constellation_03.png" id="4_jxfls"]
+[ext_resource type="Texture2D" uid="uid://l4gy0fr8urem" path="res://assets/The pale moonlight/Separate images/Sky/constellation_05.png" id="5_6hawo"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_rtkb3"]
+keycode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_iy573"]
+events = [SubResource("InputEventKey_rtkb3")]
+
+[sub_resource type="Gradient" id="Gradient_i3aqv"]
+offsets = PackedFloat32Array(0.555184)
+colors = PackedColorArray(1, 1, 1, 0.184314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dmu8x"]
+gradient = SubResource("Gradient_i3aqv")
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_cusly")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackgroundColor" type="ColorRect" parent="CanvasLayer/Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="StarBackground" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Control/StarBackground"]
+offset_right = 641.0
+offset_bottom = 359.0
+texture = ExtResource("2_5hlt5")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer/Control/StarBackground"]
+offset_right = 641.0
+offset_bottom = 359.0
+texture = ExtResource("3_2r67j")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="CanvasLayer/Control/StarBackground"]
+offset_right = 641.0
+offset_bottom = 359.0
+texture = ExtResource("4_jxfls")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="CanvasLayer/Control/StarBackground"]
+offset_right = 641.0
+offset_bottom = 359.0
+texture = ExtResource("2_5hlt5")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="CanvasLayer/Control/StarBackground"]
+offset_right = 641.0
+offset_bottom = 359.0
+texture = ExtResource("5_6hawo")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 256.0
+offset_bottom = 100.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+shortcut = SubResource("Shortcut_iy573")
+texture_normal = SubResource("GradientTexture1D_dmu8x")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/GridContainer/TextureButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -12.0
+offset_right = 24.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+
+[connection signal="pressed" from="CanvasLayer/Control/GridContainer/TextureButton" to="." method="_on_texture_button_pressed"]
