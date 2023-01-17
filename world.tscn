@@ -15,7 +15,10 @@ script = ExtResource("1_x4qry")
 [node name="ParallaxLayer" parent="base_zone/StarBackground" index="0"]
 motion_mirroring = Vector2(1250, 0)
 
-[node name="FrontHills" parent="base_zone" index="13"]
+[node name="PathFollow2D" parent="base_zone/CloudBackground/Path2D" index="0"]
+loop = true
+
+[node name="FrontHills" parent="base_zone" index="10"]
 layer = -99
 
 [node name="player" parent="." instance=ExtResource("4_np60i")]

@@ -3,16 +3,33 @@ extends Node2D
 @onready var moon_path = $MoonBackground/MoonPath
 @onready var moon_path_follow_2d = $MoonBackground/MoonPath/PathFollow2D
 
+@onready var cloud_path_follow_2d = $CloudBackground/Path2D/PathFollow2D
+@onready var cloud_container = $CloudBackground
+var clouds = null
+
 func _ready():
 	var moon_arc_points = draw_moon_arc()
+	clouds = get_tree().get_nodes_in_group("clouds")
+	for cloud in clouds:
+		cloud.progress_ratio = randf_range(0, 1)
+		print(cloud.progress_ratio)
+	print(clouds)
 	for point in moon_arc_points:
 		moon_path.curve.add_point(point)
 
 func _draw():
 	draw_moon_arc()
 
+func test():
+	for cloud in cloud_container:
+		cloud.get
+
 func _physics_process(_delta):
-	moon_path_follow_2d.progress_ratio -= .001
+	for cloud in clouds:
+		cloud.progress_ratio += .001
+		if cloud.progress_ratio == 1:
+			cloud.progress_ratio = 0
+	moon_path_follow_2d.progress_ratio -= .0005
 	if moon_path_follow_2d.progress_ratio <= 0.0:
 		moon_path_follow_2d.progress_ratio = 99.0
 		
