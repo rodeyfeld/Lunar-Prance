@@ -11,18 +11,15 @@ const HEART_UI_HEIGHT = 15
 
 func _ready():
 	health_full.size.x = HEART_UI_WIDTH * player.health
-#	health_full.size.y = HEART_UI_HEIGHT * player.health
-	
 
 
 func add_num():
 	score.text = str(int(score.text) + 1)
 
 
-
 func _on_player_enemy_hit_player():
 	health_full.size.x = HEART_UI_WIDTH * player.health
-	if player.health >= 0:
+	if player.health <= 0:
 		pass
 		
 	
