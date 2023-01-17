@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ctrcaf3beyllm"]
+[gd_scene load_steps=48 format=3 uid="uid://ctrcaf3beyllm"]
 
 [ext_resource type="Texture2D" uid="uid://b2hcwhvpnsi3w" path="res://assets/The pale moonlight/Image Sheets/sky.png" id="1_c3nx6"]
 [ext_resource type="Script" path="res://level/zone/base_zone.gd" id="1_gcybe"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://b7ma05ma2bmvy" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_19.png" id="22_b8hgb"]
 [ext_resource type="Texture2D" uid="uid://d3dw36l8dx2su" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_18.png" id="23_hbfvd"]
 [ext_resource type="Texture2D" uid="uid://deof1onynls3t" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_17.png" id="24_yeb08"]
+[ext_resource type="AudioStream" uid="uid://d4j57xorxsqcu" path="res://assets/sound/level_music.mp3" id="34_s37r3"]
 
 [sub_resource type="Curve2D" id="Curve2D_xhg70"]
 
@@ -2438,3 +2439,8 @@ format = 2
 [node name="Patrollers" type="Node2D" parent="."]
 
 [node name="Collectibles" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_s37r3")
+volume_db = -15.0
+autoplay = true

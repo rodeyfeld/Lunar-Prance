@@ -5725,7 +5725,6 @@ point_count = 2
 position = Vector2(459, 190)
 
 [node name="CloudBackground" parent="." index="3"]
-visible = false
 scroll_base_scale = Vector2(0.2, 0.2)
 
 [node name="BackLowDecorations" parent="." index="11"]
