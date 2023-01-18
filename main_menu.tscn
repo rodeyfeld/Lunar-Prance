@@ -3075,6 +3075,9 @@ autoplay = true
 [node name="ParallaxSkyBackground" parent="content/base_zone" index="0"]
 layer = -102
 
+[node name="CloudBackground" parent="content/base_zone" index="3"]
+scroll_base_scale = Vector2(0.2, 0.2)
+
 [node name="Forest" parent="content/base_zone" index="6"]
 layer = -102
 

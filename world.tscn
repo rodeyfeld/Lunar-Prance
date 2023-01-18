@@ -23,6 +23,7 @@ layer = -99
 
 [node name="player" parent="." instance=ExtResource("4_np60i")]
 position = Vector2(0, 239)
+mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-79, -247)

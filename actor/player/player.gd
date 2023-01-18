@@ -21,7 +21,7 @@ enum PLAYER_MODES {
 signal enemy_hit_player
 
 func _physics_process(_delta):
-	if PLAYER_MODES.PLAY:
+	if mode == PLAYER_MODES.PLAY:
 		velocity.y += 6
 		velocity.x = MAX_SPEED
 		if Input.is_action_just_pressed("jump"):
