@@ -20,9 +20,6 @@ func _ready():
 func _draw():
 	draw_moon_arc()
 
-func test():
-	for cloud in cloud_container:
-		cloud.get
 
 func _physics_process(_delta):
 	for cloud in clouds:

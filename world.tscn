@@ -42,7 +42,6 @@ anchor_right = 1.0
 grow_horizontal = 0
 
 [node name="Score" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
 offset_left = -102.0
 offset_top = 4.0
 offset_right = -62.0
@@ -57,7 +56,6 @@ offset_bottom = 40.0
 
 [node name="HeartUIEmpty" type="TextureRect" parent="CanvasLayer/Control2"]
 visible = false
-layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 184.0
@@ -66,7 +64,6 @@ texture = ExtResource("4_rn22u")
 stretch_mode = 1
 
 [node name="HeartUIFull" type="TextureRect" parent="CanvasLayer/Control2"]
-layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 123.0

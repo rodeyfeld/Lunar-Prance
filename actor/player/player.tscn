@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://wihx5jp6l3tq"]
+[gd_scene load_steps=15 format=3 uid="uid://wihx5jp6l3tq"]
 
 [ext_resource type="Script" path="res://actor/player/player.gd" id="1_ar66k"]
+[ext_resource type="AudioStream" uid="uid://b87lxve0nrdmr" path="res://assets/sound/chime.mp3" id="3_eill1"]
 [ext_resource type="Texture2D" uid="uid://cmj486fsabvq8" path="res://assets/player/spritesheet.png" id="3_sfmoc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdw5h"]
@@ -96,12 +97,64 @@ tracks/0/keys = {
 "values": [20, 21, 22, 23, 24, 25, 26, 27]
 }
 
+[sub_resource type="Animation" id="Animation_l3y30"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_pmmb7"]
+resource_name = "look_up"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_4qjwt"]
+resource_name = "look_around"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oxogm"]
 _data = {
 "RESET": SubResource("Animation_dtn6w"),
 "fall": SubResource("Animation_nwyci"),
 "jump": SubResource("Animation_feuon"),
-"run": SubResource("Animation_rjuka")
+"look_around": SubResource("Animation_4qjwt"),
+"look_up": SubResource("Animation_pmmb7"),
+"run": SubResource("Animation_rjuka"),
+"walk": SubResource("Animation_l3y30")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_op40l"]
@@ -154,6 +207,10 @@ shape = SubResource("CircleShape2D_op40l")
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.15
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eill1")
+volume_db = -40.0
 
 [connection signal="body_entered" from="FootArea2D" to="." method="_on_foot_area_2d_body_entered"]
 [connection signal="body_exited" from="FootArea2D" to="." method="_on_foot_area_2d_body_exited"]
