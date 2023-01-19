@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://8tj7mmqgstap"]
+
+[ext_resource type="Script" path="res://level/zone/moon_background.gd" id="1_k7vlo"]
+[ext_resource type="Texture2D" uid="uid://b46mbpi1htrv1" path="res://assets/The pale moonlight/Separate images/Sky/Moon_01.png" id="1_xk0rq"]
+
+[sub_resource type="Curve2D" id="Curve2D_xhg70"]
+
+[node name="MoonBackground" type="ParallaxBackground"]
+script = ExtResource("1_k7vlo")
+
+[node name="MoonPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_xhg70")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MoonPath"]
+position = Vector2(54.1301, 110.935)
+rotation = 2.58147
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPath/PathFollow2D"]
+texture = ExtResource("1_xk0rq")

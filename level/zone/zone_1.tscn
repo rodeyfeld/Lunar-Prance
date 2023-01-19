@@ -5724,9 +5724,6 @@ point_count = 2
 [node name="Sprite2D" parent="ParallaxSkyBackground/ParallaxLayer" index="0"]
 position = Vector2(459, 190)
 
-[node name="MoonBackground" parent="." index="2"]
-scroll_base_scale = Vector2(0.2, 0.2)
-
 [node name="CloudBackground" parent="." index="3"]
 scroll_base_scale = Vector2(0.2, 0.2)
 

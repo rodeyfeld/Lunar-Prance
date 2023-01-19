@@ -9,11 +9,6 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Node2D",
-"class": &"Base",
-"language": &"GDScript",
-"path": "res://level/base.gd"
-}, {
 "base": "CharacterBody2D",
 "class": &"Enemy",
 "language": &"GDScript",
@@ -25,7 +20,6 @@ _global_script_classes=[{
 "path": "res://actor/player/player.gd"
 }]
 _global_script_class_icons={
-"Base": "",
 "Enemy": "",
 "Player": ""
 }

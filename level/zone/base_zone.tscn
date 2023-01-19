@@ -1,16 +1,16 @@
-[gd_scene load_steps=48 format=3 uid="uid://ctrcaf3beyllm"]
+[gd_scene load_steps=47 format=3 uid="uid://ctrcaf3beyllm"]
 
 [ext_resource type="Texture2D" uid="uid://b2hcwhvpnsi3w" path="res://assets/The pale moonlight/Image Sheets/sky.png" id="1_c3nx6"]
 [ext_resource type="Script" path="res://level/zone/base_zone.gd" id="1_gcybe"]
 [ext_resource type="Texture2D" uid="uid://ccoms1esqtb6k" path="res://assets/The pale moonlight/Image Sheets/base_grass_tiles.png" id="2_sq64g"]
 [ext_resource type="Texture2D" uid="uid://yd6kfgk6ixjv" path="res://assets/The pale moonlight/Separate images/Sky/constellation_01.png" id="4_670u4"]
-[ext_resource type="Texture2D" uid="uid://b46mbpi1htrv1" path="res://assets/The pale moonlight/Separate images/Sky/Moon_01.png" id="4_d1duq"]
 [ext_resource type="Texture2D" uid="uid://waq1egqfnvlg" path="res://assets/The pale moonlight/Separate images/Sky/constellation_02.png" id="4_urch5"]
 [ext_resource type="Texture2D" uid="uid://fkbuv2732g3b" path="res://assets/The pale moonlight/Separate images/Sky/constellation_03.png" id="5_cmpkf"]
 [ext_resource type="Texture2D" uid="uid://djoid5wbfp4h4" path="res://assets/The pale moonlight/Background/Back_PineForest.png" id="6_1pnlf"]
 [ext_resource type="Texture2D" uid="uid://lojlos2x3mpy" path="res://assets/The pale moonlight/Separate images/Sky/constellation_04.png" id="6_4ltw8"]
 [ext_resource type="Texture2D" uid="uid://l4gy0fr8urem" path="res://assets/The pale moonlight/Separate images/Sky/constellation_05.png" id="7_6l6q0"]
 [ext_resource type="Texture2D" uid="uid://dtl07sminif7c" path="res://assets/The pale moonlight/Background/Back_Mountains.png" id="7_l3ubc"]
+[ext_resource type="PackedScene" uid="uid://8tj7mmqgstap" path="res://level/zone/moon_background.tscn" id="8_froq4"]
 [ext_resource type="Texture2D" uid="uid://cvsw85mf78eop" path="res://assets/The pale moonlight/Background/Back_Mix.png" id="8_yioii"]
 [ext_resource type="Texture2D" uid="uid://bt5j0swm1nf26" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_02.png" id="9_bxhq5"]
 [ext_resource type="Texture2D" uid="uid://cmkqlivuqyy66" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_01.png" id="9_pey6o"]
@@ -34,8 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://d3dw36l8dx2su" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_18.png" id="23_hbfvd"]
 [ext_resource type="Texture2D" uid="uid://deof1onynls3t" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_17.png" id="24_yeb08"]
 [ext_resource type="AudioStream" uid="uid://d4j57xorxsqcu" path="res://assets/sound/level_music.mp3" id="34_s37r3"]
-
-[sub_resource type="Curve2D" id="Curve2D_xhg70"]
 
 [sub_resource type="Curve2D" id="Curve2D_wj2cj"]
 _data = {
@@ -2111,18 +2109,7 @@ motion_mirroring = Vector2(600, 0)
 texture = ExtResource("4_670u4")
 offset = Vector2(600, 125)
 
-[node name="MoonBackground" type="ParallaxBackground" parent="."]
-
-[node name="MoonPath" type="Path2D" parent="MoonBackground"]
-curve = SubResource("Curve2D_xhg70")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="MoonBackground/MoonPath"]
-position = Vector2(54.1301, 110.935)
-rotation = 2.58147
-rotates = false
-
-[node name="Sprite2D" type="Sprite2D" parent="MoonBackground/MoonPath/PathFollow2D"]
-texture = ExtResource("4_d1duq")
+[node name="MoonBackground" parent="." instance=ExtResource("8_froq4")]
 
 [node name="CloudBackground" type="ParallaxBackground" parent="."]
 

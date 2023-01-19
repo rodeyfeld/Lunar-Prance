@@ -10,17 +10,12 @@ const level_1 = "res://world.tscn"
 
 
 
-func _on_texture_button_pressed():
-	print("pressed")
-	get_tree().change_scene_to_file(level_1)
-
 func _ready():
 	if player.mode == player.PLAYER_MODES.MENU:
 		other_walk_timer.start()
 		player_walk_timer.start()
 		player.animation_player.play("walk")
 		other.animation_player.play("walk")
-
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
