@@ -4,8 +4,9 @@
 [ext_resource type="AudioStream" uid="uid://b87lxve0nrdmr" path="res://assets/sound/chime.mp3" id="3_eill1"]
 [ext_resource type="Texture2D" uid="uid://cmj486fsabvq8" path="res://assets/player/spritesheet.png" id="3_sfmoc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bdw5h"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_am5b4"]
 radius = 5.0
+height = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_texxx"]
 radius = 17.0
@@ -79,6 +80,38 @@ tracks/0/keys = {
 "values": [9, 10]
 }
 
+[sub_resource type="Animation" id="Animation_4qjwt"]
+resource_name = "look_around"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_pmmb7"]
+resource_name = "look_up"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D2/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17, 18, 19]
+}
+
 [sub_resource type="Animation" id="Animation_rjuka"]
 resource_name = "run"
 length = 0.4
@@ -114,38 +147,6 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_pmmb7"]
-resource_name = "look_up"
-length = 3.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D2/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [13, 14, 15, 16, 17, 18, 19]
-}
-
-[sub_resource type="Animation" id="Animation_4qjwt"]
-resource_name = "look_around"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D2/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 8]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oxogm"]
 _data = {
 "RESET": SubResource("Animation_dtn6w"),
@@ -176,8 +177,9 @@ collision_mask = 8
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FootArea2D"]
-position = Vector2(15, 21)
-shape = SubResource("CircleShape2D_bdw5h")
+position = Vector2(3, 20)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_am5b4")
 
 [node name="Area2D2" type="Area2D" parent="."]
 collision_layer = 64
@@ -203,6 +205,7 @@ libraries = {
 [node name="FootCollider" type="CollisionShape2D" parent="."]
 position = Vector2(15, 20)
 shape = SubResource("CircleShape2D_op40l")
+disabled = true
 
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.15

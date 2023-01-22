@@ -3065,7 +3065,7 @@ script = ExtResource("1_cusly")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kwflx")
-volume_db = -15.0
+volume_db = -5.0
 autoplay = true
 
 [node name="content" type="Node2D" parent="."]

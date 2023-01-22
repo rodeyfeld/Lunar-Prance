@@ -8,7 +8,7 @@ class_name Player
 @onready var foot_area = $FootArea2D
 @onready var audio_player = $AudioStreamPlayer
 @onready @export var health = 5
-var MAX_SPEED = 2
+var MAX_SPEED = 100
 var jump_modifier = 1.0
 var is_on_ground = true
 @export var mode = PLAYER_MODES.MENU
