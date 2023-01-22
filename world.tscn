@@ -12,16 +12,23 @@ script = ExtResource("1_x4qry")
 
 [node name="base_zone" parent="." instance=ExtResource("2_y41og")]
 
+[node name="ParallaxSkyBackground" parent="base_zone" index="1"]
+offset = Vector2(0, 0)
+transform = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="ParallaxLayer" parent="base_zone/ParallaxSkyBackground" index="0"]
+motion_mirroring = Vector2(640, 0)
+
 [node name="ParallaxLayer" parent="base_zone/StarBackground" index="0"]
 motion_mirroring = Vector2(1250, 0)
 
 [node name="PathFollow2D" parent="base_zone/CloudBackground/Path2D" index="0"]
 loop = true
 
-[node name="FrontHills" parent="base_zone" index="10"]
+[node name="FrontHills" parent="base_zone" index="11"]
 layer = -99
 
-[node name="AudioStreamPlayer" parent="base_zone" index="19"]
+[node name="AudioStreamPlayer" parent="base_zone" index="20"]
 volume_db = -15.0
 
 [node name="player" parent="." instance=ExtResource("4_np60i")]
@@ -46,6 +53,7 @@ anchor_right = 1.0
 grow_horizontal = 0
 
 [node name="Score" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = -102.0
 offset_top = 4.0
 offset_right = -62.0
@@ -60,6 +68,7 @@ offset_bottom = 40.0
 
 [node name="HeartUIEmpty" type="TextureRect" parent="CanvasLayer/Control2"]
 visible = false
+layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 184.0
@@ -68,6 +77,7 @@ texture = ExtResource("4_rn22u")
 stretch_mode = 1
 
 [node name="HeartUIFull" type="TextureRect" parent="CanvasLayer/Control2"]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 123.0

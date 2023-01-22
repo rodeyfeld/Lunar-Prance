@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ctrcaf3beyllm"]
+[gd_scene load_steps=49 format=3 uid="uid://ctrcaf3beyllm"]
 
 [ext_resource type="Texture2D" uid="uid://b2hcwhvpnsi3w" path="res://assets/The pale moonlight/Image Sheets/sky.png" id="1_c3nx6"]
 [ext_resource type="Script" path="res://level/zone/base_zone.gd" id="1_gcybe"]
@@ -34,6 +34,13 @@
 [ext_resource type="Texture2D" uid="uid://d3dw36l8dx2su" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_18.png" id="23_hbfvd"]
 [ext_resource type="Texture2D" uid="uid://deof1onynls3t" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_17.png" id="24_yeb08"]
 [ext_resource type="AudioStream" uid="uid://d4j57xorxsqcu" path="res://assets/sound/level_music.mp3" id="34_s37r3"]
+
+[sub_resource type="Gradient" id="Gradient_3xcm0"]
+colors = PackedColorArray(0, 0, 0, 1, 0.207843, 0.180392, 0.235294, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ctuyh"]
+gradient = SubResource("Gradient_3xcm0")
+fill_to = Vector2(0, 1)
 
 [sub_resource type="Curve2D" id="Curve2D_wj2cj"]
 _data = {
@@ -1986,10 +1993,25 @@ sources/3 = SubResource("TileSetAtlasSource_yx34b")
 y_sort_enabled = true
 script = ExtResource("1_gcybe")
 
+[node name="ParallaxSkyBackground2" type="ParallaxBackground" parent="."]
+offset = Vector2(0, -320)
+transform = Transform2D(1, 0, 0, 1, 0, -320)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxSkyBackground2"]
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxSkyBackground2/ParallaxLayer2"]
+position = Vector2(1580.88, -152.25)
+scale = Vector2(49.1602, 25.2891)
+texture = SubResource("GradientTexture2D_ctuyh")
+
 [node name="ParallaxSkyBackground" type="ParallaxBackground" parent="."]
+visible = false
+offset = Vector2(0, -320)
+transform = Transform2D(1, 0, 0, 1, 0, -320)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxSkyBackground"]
-motion_mirroring = Vector2(640, 0)
+motion_mirroring = Vector2(640, 320)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxSkyBackground/ParallaxLayer"]
 position = Vector2(470, 182)
