@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dknknntxopfcr"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_x4qry"]
-[ext_resource type="PackedScene" uid="uid://d4jrqk1qbqpmn" path="res://level/zone/zone_1.tscn" id="2_y41og"]
+[ext_resource type="PackedScene" uid="uid://b8q5kguys38c" path="res://level/zone/zone_1.tscn" id="2_y41og"]
 [ext_resource type="Texture2D" uid="uid://hjsm1i0sn6x7" path="res://assets/hud/HeartUIFull.png" id="4_3dwfq"]
 [ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="4_np60i"]
 [ext_resource type="Texture2D" uid="uid://c72acmuu6rv5p" path="res://assets/hud/HeartUIEmpty.png" id="4_rn22u"]

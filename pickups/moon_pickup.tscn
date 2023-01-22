@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct0gxxtere53a"]
+
+[ext_resource type="PackedScene" uid="uid://b70km7t0113h6" path="res://pickups/pickup.tscn" id="1_okm6g"]
+[ext_resource type="Texture2D" uid="uid://71c1j3xhog7e" path="res://assets/collectible/round-faceted-blue-export.png" id="2_q5gpf"]
+
+[node name="moon_pickup" instance=ExtResource("1_okm6g")]
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_q5gpf")
