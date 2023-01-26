@@ -1,6 +1,5 @@
-[gd_scene load_steps=47 format=3 uid="uid://ctrcaf3beyllm"]
+[gd_scene load_steps=50 format=3 uid="uid://ctrcaf3beyllm"]
 
-[ext_resource type="Texture2D" uid="uid://b2hcwhvpnsi3w" path="res://assets/The pale moonlight/Image Sheets/sky.png" id="1_c3nx6"]
 [ext_resource type="Script" path="res://level/zone/base_zone.gd" id="1_gcybe"]
 [ext_resource type="Texture2D" uid="uid://ccoms1esqtb6k" path="res://assets/The pale moonlight/Image Sheets/base_grass_tiles.png" id="2_sq64g"]
 [ext_resource type="Texture2D" uid="uid://yd6kfgk6ixjv" path="res://assets/The pale moonlight/Separate images/Sky/constellation_01.png" id="4_670u4"]
@@ -32,8 +31,17 @@
 [ext_resource type="Texture2D" uid="uid://y8sr8d0iijds" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_23.png" id="21_x6jvs"]
 [ext_resource type="Texture2D" uid="uid://b7ma05ma2bmvy" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_19.png" id="22_b8hgb"]
 [ext_resource type="Texture2D" uid="uid://d3dw36l8dx2su" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_18.png" id="23_hbfvd"]
+[ext_resource type="Texture2D" uid="uid://batxbga725sra" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_16.png" id="24_y6ina"]
 [ext_resource type="Texture2D" uid="uid://deof1onynls3t" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_17.png" id="24_yeb08"]
+[ext_resource type="Texture2D" uid="uid://byetuw841rkdj" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_15.png" id="25_yjbae"]
 [ext_resource type="AudioStream" uid="uid://d4j57xorxsqcu" path="res://assets/sound/level_music.mp3" id="34_s37r3"]
+
+[sub_resource type="Gradient" id="Gradient_3xcm0"]
+colors = PackedColorArray(0, 0, 0, 1, 0.207843, 0.180392, 0.235294, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ctuyh"]
+gradient = SubResource("Gradient_3xcm0")
+fill_to = Vector2(0, 1)
 
 [sub_resource type="Curve2D" id="Curve2D_wj2cj"]
 _data = {
@@ -1986,126 +1994,149 @@ sources/3 = SubResource("TileSetAtlasSource_yx34b")
 y_sort_enabled = true
 script = ExtResource("1_gcybe")
 
-[node name="ParallaxSkyBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxSkyBackground2" type="ParallaxBackground" parent="."]
+offset = Vector2(0, -320)
+transform = Transform2D(1, 0, 0, 1, 0, -320)
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxSkyBackground"]
-motion_mirroring = Vector2(640, 0)
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxSkyBackground2"]
+motion_mirroring = Vector2(1600, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxSkyBackground/ParallaxLayer"]
-position = Vector2(470, 182)
-scale = Vector2(629.5, 74.5)
-texture = ExtResource("1_c3nx6")
-hframes = 20
-vframes = 6
-frame = 19
-region_enabled = true
-region_rect = Rect2(640, 0, 32, 32)
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxSkyBackground2/ParallaxLayer2"]
+position = Vector2(541, 58)
+scale = Vector2(26.781, 20)
+texture = SubResource("GradientTexture2D_ctuyh")
 
 [node name="StarBackground" type="ParallaxBackground" parent="."]
-scroll_base_scale = Vector2(0.1, 0.1)
+offset = Vector2(0, -200)
+transform = Transform2D(1, 0, 0, 1, 0, -200)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="StarBackground"]
+motion_scale = Vector2(1, 0.9)
 motion_mirroring = Vector2(600, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("4_670u4")
 offset = Vector2(100, 50)
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer2"]
+[node name="Sprite2D2" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("4_urch5")
 offset = Vector2(100, 50)
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(599.994, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer3"]
+[node name="Sprite2D3" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("5_cmpkf")
 offset = Vector2(400, 50)
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer4"]
+[node name="Sprite2D4" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("6_4ltw8")
 offset = Vector2(200, 50)
 
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer5"]
+[node name="Sprite2D5" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("7_6l6q0")
 offset = Vector2(300, 50)
 
-[node name="ParallaxLayer7" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer7"]
+[node name="Sprite2D6" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("6_4ltw8")
 offset = Vector2(300, 50)
 
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer6"]
+[node name="Sprite2D7" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("7_6l6q0")
 offset = Vector2(60, 50)
 
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer8"]
+[node name="Sprite2D8" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("5_cmpkf")
 offset = Vector2(550, 50)
 
-[node name="ParallaxLayer9" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer9"]
+[node name="Sprite2D9" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("5_cmpkf")
 offset = Vector2(100, 125)
 
-[node name="ParallaxLayer10" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer10"]
+[node name="Sprite2D10" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("4_urch5")
 offset = Vector2(250, 125)
 
-[node name="ParallaxLayer11" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer11"]
+[node name="Sprite2D11" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("4_670u4")
 offset = Vector2(200, 125)
 
-[node name="ParallaxLayer12" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer12"]
+[node name="Sprite2D12" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("6_4ltw8")
 offset = Vector2(350, 125)
 
-[node name="ParallaxLayer13" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer13"]
+[node name="Sprite2D13" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("7_6l6q0")
 offset = Vector2(500, 125)
 
-[node name="ParallaxLayer14" type="ParallaxLayer" parent="StarBackground"]
-motion_mirroring = Vector2(600, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer14"]
+[node name="Sprite2D14" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
 texture = ExtResource("4_670u4")
 offset = Vector2(500, 125)
 
-[node name="ParallaxLayer15" type="ParallaxLayer" parent="StarBackground"]
+[node name="Sprite2D15" type="Sprite2D" parent="StarBackground/ParallaxLayer"]
+texture = ExtResource("4_670u4")
+offset = Vector2(600, 125)
+
+[node name="StarBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="StarBackground2"]
+motion_scale = Vector2(1, 0.9)
 motion_mirroring = Vector2(600, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="StarBackground/ParallaxLayer15"]
+[node name="Sprite2D" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("4_670u4")
+offset = Vector2(100, 50)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("4_urch5")
+offset = Vector2(100, 50)
+
+[node name="Sprite2D3" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("5_cmpkf")
+offset = Vector2(400, 50)
+
+[node name="Sprite2D4" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("6_4ltw8")
+offset = Vector2(200, 50)
+
+[node name="Sprite2D5" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("7_6l6q0")
+offset = Vector2(300, 50)
+
+[node name="Sprite2D6" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("6_4ltw8")
+offset = Vector2(300, 50)
+
+[node name="Sprite2D7" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("7_6l6q0")
+offset = Vector2(60, 50)
+
+[node name="Sprite2D8" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("5_cmpkf")
+offset = Vector2(550, 50)
+
+[node name="Sprite2D9" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("5_cmpkf")
+offset = Vector2(100, 125)
+
+[node name="Sprite2D10" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("4_urch5")
+offset = Vector2(250, 125)
+
+[node name="Sprite2D11" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("4_670u4")
+offset = Vector2(200, 125)
+
+[node name="Sprite2D12" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("6_4ltw8")
+offset = Vector2(350, 125)
+
+[node name="Sprite2D13" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("7_6l6q0")
+offset = Vector2(500, 125)
+
+[node name="Sprite2D14" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
+texture = ExtResource("4_670u4")
+offset = Vector2(500, 125)
+
+[node name="Sprite2D15" type="Sprite2D" parent="StarBackground2/ParallaxLayer"]
 texture = ExtResource("4_670u4")
 offset = Vector2(600, 125)
 
@@ -2113,200 +2144,410 @@ offset = Vector2(600, 125)
 
 [node name="CloudBackground" type="ParallaxBackground" parent="."]
 
-[node name="Path2D5" type="Path2D" parent="CloudBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CloudBackground"]
+visible = false
+
+[node name="Path2D5" type="Path2D" parent="CloudBackground/ParallaxLayer"]
 curve = SubResource("Curve2D_wj2cj")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/Path2D5" groups=["clouds"]]
+[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D5" groups=["clouds"]]
 position = Vector2(1000, 0)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D5/PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D5/PathFollow2D"]
 rotation = 3.14159
 texture = ExtResource("9_pey6o")
 
-[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/Path2D5" groups=["clouds"]]
+[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D5" groups=["clouds"]]
 position = Vector2(1000, 0)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D5/PathFollow2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D5/PathFollow2D2"]
 rotation = 3.14159
 texture = ExtResource("9_bxhq5")
 
-[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/Path2D5" groups=["clouds"]]
+[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D5" groups=["clouds"]]
 position = Vector2(1000, 0)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D5/PathFollow2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D5/PathFollow2D3"]
 rotation = 3.14159
 texture = ExtResource("11_7y16t")
 
-[node name="Path2D4" type="Path2D" parent="CloudBackground"]
+[node name="Path2D4" type="Path2D" parent="CloudBackground/ParallaxLayer"]
 curve = SubResource("Curve2D_juvrh")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/Path2D4" groups=["clouds"]]
+[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D4" groups=["clouds"]]
 position = Vector2(1000, 30)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D4/PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D4/PathFollow2D"]
 rotation = 3.14159
 texture = ExtResource("12_u5pr4")
 
-[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/Path2D4" groups=["clouds"]]
+[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D4" groups=["clouds"]]
 position = Vector2(1000, 30)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D4/PathFollow2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D4/PathFollow2D2"]
 rotation = 3.14159
 texture = ExtResource("13_ayscy")
 
-[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/Path2D4" groups=["clouds"]]
+[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D4" groups=["clouds"]]
 position = Vector2(1000, 30)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D4/PathFollow2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D4/PathFollow2D3"]
 rotation = 3.14159
 texture = ExtResource("14_m8gb5")
 
-[node name="Path2D" type="Path2D" parent="CloudBackground"]
+[node name="Path2D" type="Path2D" parent="CloudBackground/ParallaxLayer"]
 curve = SubResource("Curve2D_4ntsy")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/Path2D" groups=["clouds"]]
+[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D" groups=["clouds"]]
 position = Vector2(1000, 60)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D/PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D/PathFollow2D"]
 rotation = 3.14159
 texture = ExtResource("15_hoi5u")
 
-[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/Path2D" groups=["clouds"]]
+[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D" groups=["clouds"]]
 position = Vector2(1000, 60)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D/PathFollow2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D/PathFollow2D2"]
 rotation = 3.14159
 texture = ExtResource("16_ejl4f")
 
-[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/Path2D" groups=["clouds"]]
+[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D" groups=["clouds"]]
 position = Vector2(1000, 60)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D/PathFollow2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D/PathFollow2D3"]
 rotation = 3.14159
 texture = ExtResource("17_l23j0")
 
-[node name="Path2D2" type="Path2D" parent="CloudBackground"]
+[node name="Path2D2" type="Path2D" parent="CloudBackground/ParallaxLayer"]
 curve = SubResource("Curve2D_3i8hn")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/Path2D2" groups=["clouds"]]
+[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D2" groups=["clouds"]]
 position = Vector2(1000, 90)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D2/PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D2/PathFollow2D"]
 rotation = 3.14159
 texture = ExtResource("16_ejl4f")
 
-[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/Path2D2" groups=["clouds"]]
+[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D2" groups=["clouds"]]
 position = Vector2(1000, 90)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D2/PathFollow2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D2/PathFollow2D2"]
 rotation = 3.14159
 texture = ExtResource("17_l23j0")
 
-[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/Path2D2" groups=["clouds"]]
+[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D2" groups=["clouds"]]
 position = Vector2(1000, 90)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D2/PathFollow2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D2/PathFollow2D3"]
 rotation = 3.14159
 texture = ExtResource("18_4ptnn")
 
-[node name="PathFollow2D4" type="PathFollow2D" parent="CloudBackground/Path2D2" groups=["clouds"]]
+[node name="PathFollow2D4" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D2" groups=["clouds"]]
 position = Vector2(1000, 90)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D2/PathFollow2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D2/PathFollow2D4"]
 rotation = 3.14159
 texture = ExtResource("19_1xccx")
 
-[node name="PathFollow2D5" type="PathFollow2D" parent="CloudBackground/Path2D2" groups=["clouds"]]
+[node name="PathFollow2D5" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D2" groups=["clouds"]]
 position = Vector2(1000, 90)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D2/PathFollow2D5"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D2/PathFollow2D5"]
 rotation = 3.14159
 texture = ExtResource("20_25bi3")
 
-[node name="PathFollow2D6" type="PathFollow2D" parent="CloudBackground/Path2D2" groups=["clouds"]]
+[node name="PathFollow2D6" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D2" groups=["clouds"]]
 position = Vector2(1000, 90)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D2/PathFollow2D6"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D2/PathFollow2D6"]
 rotation = 3.14159
 texture = ExtResource("21_x6jvs")
 
-[node name="Path2D3" type="Path2D" parent="CloudBackground"]
+[node name="Path2D3" type="Path2D" parent="CloudBackground/ParallaxLayer"]
 curve = SubResource("Curve2D_1qhx6")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/Path2D3" groups=["clouds"]]
+[node name="PathFollow2D" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D3" groups=["clouds"]]
 position = Vector2(1000, 120)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D3/PathFollow2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D3/PathFollow2D"]
 rotation = 3.14159
 texture = ExtResource("22_b8hgb")
 
-[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/Path2D3" groups=["clouds"]]
+[node name="PathFollow2D2" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D3" groups=["clouds"]]
 position = Vector2(1000, 120)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D3/PathFollow2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D3/PathFollow2D2"]
 rotation = 3.14159
 texture = ExtResource("23_hbfvd")
 
-[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/Path2D3" groups=["clouds"]]
+[node name="PathFollow2D3" type="PathFollow2D" parent="CloudBackground/ParallaxLayer/Path2D3" groups=["clouds"]]
 position = Vector2(1000, 120)
 rotation = 3.14159
 rotates = false
 loop = false
 
-[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/Path2D3/PathFollow2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer/Path2D3/PathFollow2D3"]
 rotation = 3.14159
 texture = ExtResource("24_yeb08")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CloudBackground"]
+motion_mirroring = Vector2(780, 0)
+
+[node name="Node2D" type="Node2D" parent="CloudBackground/ParallaxLayer2"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D"]
+position = Vector2(513, 27)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D"]
+position = Vector2(542, 5)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D"]
+position = Vector2(578, 19)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D"]
+position = Vector2(452, 33)
+texture = ExtResource("17_l23j0")
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D"]
+position = Vector2(595, 13)
+texture = ExtResource("24_y6ina")
+
+[node name="Sprite2D7" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D"]
+position = Vector2(544, 25)
+texture = ExtResource("18_4ptnn")
+
+[node name="Node2D2" type="Node2D" parent="CloudBackground/ParallaxLayer2"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D2"]
+position = Vector2(52, -96)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D2"]
+position = Vector2(81, -118)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D2"]
+position = Vector2(117, -104)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer2/Node2D2"]
+position = Vector2(134, -110)
+texture = ExtResource("17_l23j0")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="CloudBackground"]
+motion_mirroring = Vector2(2000, 0)
+
+[node name="Node2D" type="Node2D" parent="CloudBackground/ParallaxLayer3"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D"]
+position = Vector2(252, 56)
+texture = ExtResource("11_7y16t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D"]
+position = Vector2(193, 27)
+texture = ExtResource("9_bxhq5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D"]
+position = Vector2(116, 59)
+texture = ExtResource("17_l23j0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D"]
+position = Vector2(187, 45)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D"]
+position = Vector2(217, 55)
+texture = ExtResource("9_pey6o")
+
+[node name="Node2D2" type="Node2D" parent="CloudBackground/ParallaxLayer3"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D2"]
+position = Vector2(994, -118)
+texture = ExtResource("11_7y16t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D2"]
+position = Vector2(935, -147)
+texture = ExtResource("9_bxhq5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D2"]
+position = Vector2(858, -115)
+texture = ExtResource("17_l23j0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D2"]
+position = Vector2(929, -129)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D2"]
+position = Vector2(959, -119)
+texture = ExtResource("9_pey6o")
+
+[node name="Node2D3" type="Node2D" parent="CloudBackground/ParallaxLayer3"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D3"]
+position = Vector2(2497, -313)
+texture = ExtResource("11_7y16t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D3"]
+position = Vector2(2438, -342)
+texture = ExtResource("9_bxhq5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D3"]
+position = Vector2(2361, -310)
+texture = ExtResource("17_l23j0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D3"]
+position = Vector2(2432, -324)
+texture = ExtResource("16_ejl4f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer3/Node2D3"]
+position = Vector2(2462, -314)
+texture = ExtResource("9_pey6o")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="CloudBackground"]
+motion_mirroring = Vector2(2000, 0)
+
+[node name="Node2D" type="Node2D" parent="CloudBackground/ParallaxLayer4"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D"]
+position = Vector2(1799, -3)
+texture = ExtResource("11_7y16t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D"]
+position = Vector2(1805, -8)
+texture = ExtResource("9_bxhq5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D"]
+position = Vector2(1806, -4)
+texture = ExtResource("17_l23j0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D"]
+position = Vector2(1772, 2)
+texture = ExtResource("20_25bi3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D"]
+position = Vector2(1826, -3)
+texture = ExtResource("9_pey6o")
+
+[node name="Node2D2" type="Node2D" parent="CloudBackground/ParallaxLayer4"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D2"]
+position = Vector2(1489, 17)
+texture = ExtResource("11_7y16t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D2"]
+position = Vector2(1495, 12)
+texture = ExtResource("9_bxhq5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D2"]
+position = Vector2(1496, 16)
+texture = ExtResource("17_l23j0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D2"]
+position = Vector2(1462, 22)
+texture = ExtResource("20_25bi3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D2"]
+position = Vector2(1498, 13)
+texture = ExtResource("9_pey6o")
+
+[node name="Node2D3" type="Node2D" parent="CloudBackground/ParallaxLayer4"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D3"]
+position = Vector2(533, 20)
+texture = ExtResource("11_7y16t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D3"]
+position = Vector2(539, 15)
+texture = ExtResource("9_bxhq5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D3"]
+position = Vector2(540, 19)
+texture = ExtResource("17_l23j0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D3"]
+position = Vector2(506, 25)
+texture = ExtResource("20_25bi3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D3"]
+position = Vector2(560, 20)
+texture = ExtResource("9_pey6o")
+
+[node name="Node2D4" type="Node2D" parent="CloudBackground/ParallaxLayer4"]
+
+[node name="Sprite2D6" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D4"]
+position = Vector2(888, 12)
+texture = ExtResource("11_7y16t")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D4"]
+position = Vector2(894, 7)
+texture = ExtResource("25_yjbae")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D4"]
+position = Vector2(895, 11)
+texture = ExtResource("15_hoi5u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D4"]
+position = Vector2(861, 17)
+texture = ExtResource("20_25bi3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D4"]
+position = Vector2(359, 30)
+texture = ExtResource("9_pey6o")
 
 [node name="ParallaxGroundBackGround" type="ParallaxBackground" parent="."]
 
@@ -2406,7 +2647,7 @@ scroll_base_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="FrontHills/ParallaxLayer"]
-position = Vector2(641.5, 125)
+position = Vector2(639.5, 128)
 texture = ExtResource("10_3abuj")
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 32)

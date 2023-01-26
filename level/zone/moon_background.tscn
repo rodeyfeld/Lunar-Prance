@@ -6,15 +6,18 @@
 [sub_resource type="Curve2D" id="Curve2D_xhg70"]
 
 [node name="MoonBackground" type="ParallaxBackground"]
+scroll_base_scale = Vector2(1, 0)
 script = ExtResource("1_k7vlo")
 
 [node name="MoonPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_xhg70")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="MoonPath"]
-position = Vector2(54.1301, 110.935)
-rotation = 2.58147
 rotates = false
 
 [node name="Sprite2D" type="Sprite2D" parent="MoonPath/PathFollow2D"]
 texture = ExtResource("1_xk0rq")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1, 0)
+motion_mirroring = Vector2(640, 0)
