@@ -2,7 +2,7 @@ extends Node2D
 
 #@onready var level = $Base
 @onready var score = $CanvasLayer/Control/Score
-@onready var player = $player
+@onready var player = $Node2D2/player
 @onready var health_full = $CanvasLayer/Control2/HeartUIFull
 
 const HEART_UI_WIDTH = 15
@@ -11,7 +11,8 @@ const HEART_UI_HEIGHT = 15
 
 func _ready():
 	health_full.size.x = HEART_UI_WIDTH * player.health
-
+	player.global_position.x = 200
+	print(player.global_position)
 
 func add_num():
 	score.text = str(int(score.text) + 1)

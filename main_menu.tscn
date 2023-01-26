@@ -3072,9 +3072,6 @@ autoplay = true
 
 [node name="base_zone" parent="content" instance=ExtResource("7_l52vh")]
 
-[node name="ParallaxSkyBackground" parent="content/base_zone" index="0"]
-layer = -102
-
 [node name="CloudBackground" parent="content/base_zone" index="3"]
 scroll_base_scale = Vector2(0.2, 0.2)
 
@@ -3087,7 +3084,7 @@ layer = -102
 [node name="BackGraves" parent="content/base_zone" index="8"]
 layer = -102
 
-[node name="AudioStreamPlayer" parent="content/base_zone" index="16"]
+[node name="AudioStreamPlayer" parent="content/base_zone" index="15"]
 autoplay = false
 
 [node name="BackPath" type="ParallaxBackground" parent="content/base_zone"]
