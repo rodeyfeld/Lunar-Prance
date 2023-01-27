@@ -3072,19 +3072,19 @@ autoplay = true
 
 [node name="base_zone" parent="content" instance=ExtResource("7_l52vh")]
 
-[node name="CloudBackground" parent="content/base_zone" index="3"]
+[node name="CloudBackground" parent="content/base_zone" index="4"]
 scroll_base_scale = Vector2(0.2, 0.2)
 
-[node name="Forest" parent="content/base_zone" index="6"]
+[node name="Forest" parent="content/base_zone" index="7"]
 layer = -102
 
-[node name="Mountains" parent="content/base_zone" index="7"]
+[node name="Mountains" parent="content/base_zone" index="8"]
 layer = -102
 
-[node name="BackGraves" parent="content/base_zone" index="8"]
+[node name="BackGraves" parent="content/base_zone" index="9"]
 layer = -102
 
-[node name="AudioStreamPlayer" parent="content/base_zone" index="15"]
+[node name="AudioStreamPlayer" parent="content/base_zone" index="16"]
 autoplay = false
 
 [node name="BackPath" type="ParallaxBackground" parent="content/base_zone"]
@@ -3192,6 +3192,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="content/CanvasLayer/Control/StarBackground"]
+layout_mode = 0
 offset_right = 641.0
 offset_bottom = 359.0
 texture = ExtResource("2_5hlt5")
@@ -3199,6 +3200,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="content/CanvasLayer/Control/StarBackground"]
+layout_mode = 0
 offset_right = 641.0
 offset_bottom = 359.0
 texture = ExtResource("3_2r67j")
@@ -3206,6 +3208,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="content/CanvasLayer/Control/StarBackground"]
+layout_mode = 0
 offset_right = 641.0
 offset_bottom = 359.0
 texture = ExtResource("4_jxfls")
@@ -3213,6 +3216,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="NinePatchRect4" type="NinePatchRect" parent="content/CanvasLayer/Control/StarBackground"]
+layout_mode = 0
 offset_right = 641.0
 offset_bottom = 359.0
 texture = ExtResource("2_5hlt5")
@@ -3220,6 +3224,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="NinePatchRect5" type="NinePatchRect" parent="content/CanvasLayer/Control/StarBackground"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = -4.0
 offset_right = 645.0
@@ -3230,7 +3235,7 @@ axis_stretch_vertical = 1
 
 [node name="GridContainer" type="GridContainer" parent="content/CanvasLayer/Control"]
 visible = false
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3240,8 +3245,7 @@ grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="content/CanvasLayer/Control/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
-offset_right = 256.0
-offset_bottom = 100.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 action_mode = 0
@@ -3250,7 +3254,7 @@ texture_normal = SubResource("GradientTexture1D_dmu8x")
 stretch_mode = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="content/CanvasLayer/Control/GridContainer/TextureButton"]
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -3274,7 +3278,7 @@ position = Vector2(159, 86)
 texture = ExtResource("11_exp17")
 
 [node name="Control2" type="Control" parent="content/CanvasLayer/Control"]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -3285,6 +3289,7 @@ grow_vertical = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="content/CanvasLayer/Control/Control2"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = -47.0
 offset_top = -38.0
 offset_right = 46.0
