@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3mm7gq7cc550"]
+[gd_scene load_steps=6 format=3 uid="uid://bn045ivs70haw"]
 
 [sub_resource type="GDScript" id="GDScript_h66xl"]
 script/source = "extends CharacterBody2D

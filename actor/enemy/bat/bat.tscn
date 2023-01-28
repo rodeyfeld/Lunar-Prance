@@ -29,7 +29,25 @@ region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_563cf"]
 animations = [{
-"frames": [SubResource("AtlasTexture_a4d25"), SubResource("AtlasTexture_irvjc"), SubResource("AtlasTexture_8yvvk"), SubResource("AtlasTexture_ew172"), SubResource("AtlasTexture_n070a"), SubResource("AtlasTexture_vh1ay")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4d25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irvjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yvvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew172")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n070a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh1ay")
+}],
 "loop": true,
 "name": &"default",
 "speed": 10.0

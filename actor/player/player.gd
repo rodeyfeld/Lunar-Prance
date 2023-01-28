@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
-@onready var animation_player = $Area2D2/AnimationPlayer
+@onready var animation_player = $BodyArea/AnimationPlayer
 @onready var jump_timer = $JumpTimer
-@onready var foot_collider = $FootCollider
+@onready var player_collider = $PlayerCollider
 @onready var foot_area = $FootArea2D
 @onready var audio_player = $AudioStreamPlayer
 @onready @export var health = 5
@@ -27,7 +27,7 @@ func _physics_process(_delta):
 		if Input.is_action_just_pressed("jump"):
 			if jump_timer.get_time_left() > 0:
 				if !is_on_ground:
-					foot_collider.set_deferred("disabled", true)
+					player_collider.set_deferred("disabled", true)
 				jump_timer.stop()
 			else:
 				jump_timer.start()
@@ -50,7 +50,7 @@ func jump():
 
 func _on_foot_area_2d_body_entered(_body):
 	is_on_ground = true
-	foot_collider.set_deferred("disabled", false)
+	player_collider.set_deferred("disabled", false)
 
 func _on_jump_timer_timeout():
 	jump()
@@ -58,7 +58,7 @@ func _on_jump_timer_timeout():
 
 func _on_foot_area_2d_body_exited(_body):
 	is_on_ground = false
-	foot_collider.set_deferred("disabled", false)
+	player_collider.set_deferred("disabled", false)
 
 
 func _on_area_2d_2_area_entered(area):

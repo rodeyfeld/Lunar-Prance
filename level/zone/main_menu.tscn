@@ -1,13 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://os3wlqovqd6j"]
+[gd_scene load_steps=31 format=3 uid="uid://ch2td3qmw1b5q"]
 
-[ext_resource type="Script" path="res://level/main_menu.gd" id="1_cusly"]
+[ext_resource type="Script" path="res://level/zone/main_menu.gd" id="1_3tuu3"]
 [ext_resource type="Texture2D" uid="uid://lojlos2x3mpy" path="res://assets/The pale moonlight/Separate images/Sky/constellation_04.png" id="2_5hlt5"]
 [ext_resource type="Texture2D" uid="uid://waq1egqfnvlg" path="res://assets/The pale moonlight/Separate images/Sky/constellation_02.png" id="3_2r67j"]
 [ext_resource type="Texture2D" uid="uid://fkbuv2732g3b" path="res://assets/The pale moonlight/Separate images/Sky/constellation_03.png" id="4_jxfls"]
 [ext_resource type="Texture2D" uid="uid://l4gy0fr8urem" path="res://assets/The pale moonlight/Separate images/Sky/constellation_05.png" id="5_6hawo"]
 [ext_resource type="AudioStream" uid="uid://b0qylj35kyl6d" path="res://assets/sound/menu_music_new.mp3" id="6_kwflx"]
 [ext_resource type="Texture2D" uid="uid://d2gimbjgrii35" path="res://assets/The pale moonlight/Image Sheets/nature_sprites.png" id="6_r0ato"]
-[ext_resource type="PackedScene" uid="uid://ctrcaf3beyllm" path="res://level/zone/base_zone.tscn" id="7_l52vh"]
+[ext_resource type="PackedScene" uid="uid://ctrcaf3beyllm" path="res://level/zone/common/base_zone.tscn" id="7_l52vh"]
 [ext_resource type="Texture2D" uid="uid://ccoms1esqtb6k" path="res://assets/The pale moonlight/Image Sheets/base_grass_tiles.png" id="8_2po16"]
 [ext_resource type="PackedScene" uid="uid://cmpr438w8iqf4" path="res://actor/player/other.tscn" id="9_0t4s1"]
 [ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="9_40sjv"]
@@ -3061,7 +3061,7 @@ _data = {
 }
 
 [node name="main_menu" type="Node2D"]
-script = ExtResource("1_cusly")
+script = ExtResource("1_3tuu3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kwflx")
@@ -3072,19 +3072,19 @@ autoplay = true
 
 [node name="base_zone" parent="content" instance=ExtResource("7_l52vh")]
 
-[node name="CloudBackground" parent="content/base_zone" index="4"]
+[node name="CloudBackground" parent="content/base_zone" index="5"]
 scroll_base_scale = Vector2(0.2, 0.2)
 
-[node name="Forest" parent="content/base_zone" index="7"]
+[node name="Forest" parent="content/base_zone" index="8"]
 layer = -102
 
-[node name="Mountains" parent="content/base_zone" index="8"]
+[node name="Mountains" parent="content/base_zone" index="9"]
 layer = -102
 
-[node name="BackGraves" parent="content/base_zone" index="9"]
+[node name="BackGraves" parent="content/base_zone" index="10"]
 layer = -102
 
-[node name="AudioStreamPlayer" parent="content/base_zone" index="16"]
+[node name="AudioStreamPlayer" parent="content/base_zone" index="15"]
 autoplay = false
 
 [node name="BackPath" type="ParallaxBackground" parent="content/base_zone"]

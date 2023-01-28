@@ -7,7 +7,6 @@ extends Node2D
 var reached_apex = false
 
 func _physics_process(delta):
-	print(moon.global_position, moon.position)
 	if moon.position.y < -350:
 		reached_apex = true
 		

@@ -1,161 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://dknknntxopfcr"]
+[gd_scene load_steps=3 format=3 uid="uid://dihihyoyvv4ge"]
 
-[ext_resource type="Script" path="res://world.gd" id="1_x4qry"]
-[ext_resource type="PackedScene" uid="uid://b8q5kguys38c" path="res://level/zone/zone_1.tscn" id="2_y41og"]
-[ext_resource type="Texture2D" uid="uid://yd6kfgk6ixjv" path="res://assets/The pale moonlight/Separate images/Sky/constellation_01.png" id="3_dodpq"]
-[ext_resource type="Texture2D" uid="uid://hjsm1i0sn6x7" path="res://assets/hud/HeartUIFull.png" id="4_3dwfq"]
-[ext_resource type="Texture2D" uid="uid://waq1egqfnvlg" path="res://assets/The pale moonlight/Separate images/Sky/constellation_02.png" id="4_6wyth"]
-[ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="4_np60i"]
-[ext_resource type="Texture2D" uid="uid://c72acmuu6rv5p" path="res://assets/hud/HeartUIEmpty.png" id="4_rn22u"]
-[ext_resource type="Texture2D" uid="uid://fkbuv2732g3b" path="res://assets/The pale moonlight/Separate images/Sky/constellation_03.png" id="5_n20d7"]
-[ext_resource type="Texture2D" uid="uid://l4gy0fr8urem" path="res://assets/The pale moonlight/Separate images/Sky/constellation_05.png" id="6_g1ccn"]
-[ext_resource type="Texture2D" uid="uid://lojlos2x3mpy" path="res://assets/The pale moonlight/Separate images/Sky/constellation_04.png" id="7_h4sli"]
+[ext_resource type="PackedScene" uid="uid://dpd2mh2x0rdh2" path="res://level/zone/zone_1.tscn" id="1_xwgfk"]
+[ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="2_dkhjc"]
 
-[node name="World" type="Node2D"]
-position = Vector2(2, 0)
-script = ExtResource("1_x4qry")
-metadata/_edit_vertical_guides_ = [-638.0]
-metadata/_edit_horizontal_guides_ = [-1249.0]
+[node name="world" type="Node2D"]
 
-[node name="base_zone" parent="." instance=ExtResource("2_y41og")]
+[node name="base_zone" parent="." instance=ExtResource("1_xwgfk")]
 
-[node name="Sprite2D2" parent="base_zone/ParallaxSkyBackground2/ParallaxLayer2" index="0"]
-position = Vector2(856, -122)
-scale = Vector2(49.1602, 25.2891)
-
-[node name="ParallaxBacklight" parent="base_zone" index="1"]
-scroll_base_scale = Vector2(0.2, 0.2)
-
-[node name="ParallaxLayer" parent="base_zone/ParallaxBacklight" index="0"]
-motion_mirroring = Vector2(0, 0)
-
-[node name="PointLight2D" parent="base_zone/ParallaxBacklight/ParallaxLayer" index="0"]
-position = Vector2(248, 200)
-
-[node name="Sprite2D" parent="base_zone/StarBackground2/ParallaxLayer" index="0"]
-texture = ExtResource("3_dodpq")
-
-[node name="Sprite2D2" parent="base_zone/StarBackground2/ParallaxLayer" index="1"]
-texture = ExtResource("4_6wyth")
-
-[node name="Sprite2D3" parent="base_zone/StarBackground2/ParallaxLayer" index="2"]
-texture = ExtResource("5_n20d7")
-
-[node name="Sprite2D5" parent="base_zone/StarBackground2/ParallaxLayer" index="4"]
-texture = ExtResource("6_g1ccn")
-
-[node name="Sprite2D6" parent="base_zone/StarBackground2/ParallaxLayer" index="5"]
-texture = ExtResource("7_h4sli")
-
-[node name="Sprite2D7" parent="base_zone/StarBackground2/ParallaxLayer" index="6"]
-texture = ExtResource("6_g1ccn")
-
-[node name="Sprite2D8" parent="base_zone/StarBackground2/ParallaxLayer" index="7"]
-texture = ExtResource("5_n20d7")
-
-[node name="Sprite2D9" parent="base_zone/StarBackground2/ParallaxLayer" index="8"]
-texture = ExtResource("5_n20d7")
-
-[node name="Sprite2D10" parent="base_zone/StarBackground2/ParallaxLayer" index="9"]
-texture = ExtResource("4_6wyth")
-
-[node name="Sprite2D11" parent="base_zone/StarBackground2/ParallaxLayer" index="10"]
-texture = ExtResource("3_dodpq")
-
-[node name="Sprite2D12" parent="base_zone/StarBackground2/ParallaxLayer" index="11"]
-texture = ExtResource("7_h4sli")
-
-[node name="Sprite2D13" parent="base_zone/StarBackground2/ParallaxLayer" index="12"]
-texture = ExtResource("6_g1ccn")
-
-[node name="Sprite2D14" parent="base_zone/StarBackground2/ParallaxLayer" index="13"]
-texture = ExtResource("3_dodpq")
-
-[node name="Sprite2D15" parent="base_zone/StarBackground2/ParallaxLayer" index="14"]
-texture = ExtResource("3_dodpq")
-
-[node name="Sprite2D" parent="base_zone/MoonParallaxBackground/ParallaxLayer" index="0"]
-offset = Vector2(0, 0)
-
-[node name="PointLight2D" parent="base_zone/MoonParallaxBackground/ParallaxLayer/Sprite2D" index="0"]
-energy = 4.76
-texture_scale = 0.01
-height = 1.0
-
-[node name="ParallaxLayer2" parent="base_zone/CloudBackground" index="1"]
-motion_mirroring = Vector2(1500, 0)
-
-[node name="Forest" parent="base_zone" index="9"]
-scroll_base_offset = Vector2(0, 400)
-
-[node name="FrontGraves" parent="base_zone" index="12"]
-scroll_base_offset = Vector2(0, -10)
-
-[node name="FrontHills" parent="base_zone" index="13"]
-layer = -99
-scroll_base_offset = Vector2(0, -20)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-grow_horizontal = 0
-
-[node name="Score" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = -102.0
-offset_top = 4.0
-offset_right = -62.0
-offset_bottom = 30.0
-text = "0"
-
-[node name="Control2" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HeartUIEmpty" type="TextureRect" parent="CanvasLayer/Control2"]
-visible = false
-layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 184.0
-offset_bottom = 31.0
-texture = ExtResource("4_rn22u")
-stretch_mode = 1
-
-[node name="HeartUIFull" type="TextureRect" parent="CanvasLayer/Control2"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 123.0
-offset_bottom = 31.0
-texture = ExtResource("4_3dwfq")
-stretch_mode = 1
-
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(100, 230)
-
-[node name="player" parent="Node2D2" instance=ExtResource("4_np60i")]
+[node name="player" parent="." instance=ExtResource("2_dkhjc")]
+position = Vector2(77, 256)
 mode = 0
 
-[node name="Camera2D" type="Camera2D" parent="Node2D2/player"]
-position = Vector2(200, 0)
-offset = Vector2(20, 0)
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(242, -81)
 current = true
-limit_top = -1250
-limit_bottom = 300
+limit_left = 0
+limit_bottom = 360
 limit_smoothed = true
 drag_vertical_enabled = true
 editor_draw_limits = true
-
-[connection signal="enemy_hit_player" from="Node2D2/player" to="." method="_on_player_enemy_hit_player"]
-
-[editable path="base_zone"]
-[editable path="base_zone/Patrollers/patroller"]
-[editable path="base_zone/Patrollers/patroller2"]
-[editable path="Node2D2/player"]
