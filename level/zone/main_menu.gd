@@ -17,7 +17,7 @@ func _ready():
 		player.animation_player.play("walk")
 		other.animation_player.play("walk")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("jump"):
 		get_tree().change_scene_to_file(level_1)
 

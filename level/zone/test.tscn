@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvhpxripxau1r"]
+
+[ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="1_ll2q0"]
+[ext_resource type="PackedScene" uid="uid://ct0gxxtere53a" path="res://pickups/moon_pickup.tscn" id="2_8lhnb"]
+[ext_resource type="PackedScene" uid="uid://03pl8imfndiy" path="res://actor/character.tscn" id="3_c51tl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_ll2q0")]
+position = Vector2(258, 110)
+
+[node name="moon_pickup" parent="." instance=ExtResource("2_8lhnb")]
+position = Vector2(113, 89)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_c51tl")]
+position = Vector2(326, 244)

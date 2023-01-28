@@ -8,26 +8,10 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "CharacterBody2D",
-"class": &"Enemy",
-"language": &"GDScript",
-"path": "res://actor/enemy/enemy.gd"
-}, {
-"base": "CharacterBody2D",
-"class": &"Player",
-"language": &"GDScript",
-"path": "res://actor/player/player.gd"
-}]
-_global_script_class_icons={
-"Enemy": "",
-"Player": ""
-}
-
 [application]
 
 config/name="Ole"
-run/main_scene="res://main_menu.tscn"
+run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -43,6 +27,7 @@ window/stretch/aspect="expand"
 [editor]
 
 movie_writer/movie_file="C:/Users/ericd/godot/Ole/movie.avi"
+export/convert_text_resources_to_binary=true
 
 [input]
 
