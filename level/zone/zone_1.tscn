@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpd2mh2x0rdh2"]
+[gd_scene load_steps=5 format=3 uid="uid://dpd2mh2x0rdh2"]
 
 [ext_resource type="PackedScene" uid="uid://ctrcaf3beyllm" path="res://level/zone/common/base_zone.tscn" id="1_tjev5"]
+[ext_resource type="PackedScene" uid="uid://bl85asqssx3ae" path="res://actor/enemy/zombie/zombie.tscn" id="2_f8riq"]
 [ext_resource type="PackedScene" uid="uid://ct0gxxtere53a" path="res://pickups/moon_pickup.tscn" id="2_lbp8f"]
-[ext_resource type="PackedScene" uid="uid://c5gmw47c0nceb" path="res://actor/enemy/bat/bat.tscn" id="3_dsnt2"]
+[ext_resource type="PackedScene" uid="uid://3ra8nkf02acc" path="res://actor/enemy/wraith/wraith.tscn" id="3_kxmyk"]
 
 [node name="base_zone" instance=ExtResource("1_tjev5")]
 metadata/_edit_vertical_guides_ = [15004.0]
@@ -37,13 +38,62 @@ layer_0/tile_data = PackedInt32Array(1179648, 0, 8, 1179649, 65536, 8, 1179650, 
 [node name="base_platform" parent="." index="22"]
 layer_0/tile_data = PackedInt32Array(589920, 1179650, 0, 655456, 1179650, 1, 720992, 1179650, 2, 786528, 1179650, 3, 589921, 1245186, 0, 655457, 1245186, 1, 720993, 1245186, 2, 786529, 1245186, 3, 589922, 1310722, 0, 655458, 1310722, 1, 720994, 1310722, 2, 786530, 1310722, 3, 589923, 1376258, 0, 655459, 1376258, 1, 720995, 1376258, 2, 786531, 1376258, 3, 589924, 1441794, 0, 655460, 1441794, 1, 720996, 1441794, 2, 786532, 1441794, 3, 589925, 1507330, 0, 655461, 1507330, 1, 720997, 1507330, 2, 786533, 1507330, 3, 589934, 1179650, 0, 655470, 1179650, 1, 721006, 1179650, 2, 786542, 1179650, 3, 589935, 1245186, 0, 655471, 1245186, 1, 721007, 1245186, 2, 786543, 1245186, 3, 589936, 1310722, 0, 655472, 1310722, 1, 721008, 1310722, 2, 786544, 1310722, 3, 589937, 1376258, 0, 655473, 1376258, 1, 721009, 1376258, 2, 786545, 1376258, 3, 589938, 1441794, 0, 655474, 1441794, 1, 721010, 1441794, 2, 786546, 1441794, 3, 589939, 1507330, 0, 655475, 1507330, 1, 721011, 1507330, 2, 786547, 1507330, 3, 136, 1179650, 0, 65672, 1179650, 1, 131208, 1179650, 2, 196744, 1179650, 3, 137, 1245186, 0, 65673, 1245186, 1, 131209, 1245186, 2, 196745, 1245186, 3, 138, 1310722, 0, 65674, 1310722, 1, 131210, 1310722, 2, 196746, 1310722, 3, 139, 1376258, 0, 65675, 1376258, 1, 131211, 1376258, 2, 196747, 1376258, 3, 140, 1441794, 0, 65676, 1441794, 1, 131212, 1441794, 2, 196748, 1441794, 3, 141, 1245186, 0, 65677, 1245186, 1, 131213, 1245186, 2, 196749, 1245186, 3, 142, 1310722, 0, 65678, 1310722, 1, 131214, 1310722, 2, 196750, 1310722, 3, 143, 1376258, 0, 65679, 1376258, 1, 131215, 1376258, 2, 196751, 1376258, 3, 144, 1441794, 0, 65680, 1441794, 1, 131216, 1441794, 2, 196752, 1441794, 3, 145, 1245186, 0, 65681, 1245186, 1, 131217, 1245186, 2, 196753, 1245186, 3, 146, 1310722, 0, 65682, 1310722, 1, 131218, 1310722, 2, 196754, 1310722, 3, 147, 1376258, 0, 65683, 1376258, 1, 131219, 1376258, 2, 196755, 1376258, 3, 148, 1441794, 0, 65684, 1441794, 1, 131220, 1441794, 2, 196756, 1441794, 3, 149, 1245186, 0, 65685, 1245186, 1, 131221, 1245186, 2, 196757, 1245186, 3, 150, 1310722, 0, 65686, 1310722, 1, 131222, 1310722, 2, 196758, 1310722, 3, 151, 1376258, 0, 65687, 1376258, 1, 131223, 1376258, 2, 196759, 1376258, 3, 152, 1441794, 0, 65688, 1441794, 1, 131224, 1441794, 2, 196760, 1441794, 3, 153, 1245186, 0, 65689, 1245186, 1, 131225, 1245186, 2, 196761, 1245186, 3, 154, 1310722, 0, 65690, 1310722, 1, 131226, 1310722, 2, 196762, 1310722, 3, 155, 1376258, 0, 65691, 1376258, 1, 131227, 1376258, 2, 196763, 1376258, 3, 156, 1441794, 0, 65692, 1441794, 1, 131228, 1441794, 2, 196764, 1441794, 3, 157, 1245186, 0, 65693, 1245186, 1, 131229, 1245186, 2, 196765, 1245186, 3, 158, 1310722, 0, 65694, 1310722, 1, 131230, 1310722, 2, 196766, 1310722, 3, 159, 1376258, 0, 65695, 1376258, 1, 131231, 1376258, 2, 196767, 1376258, 3, 160, 1441794, 0, 65696, 1441794, 1, 131232, 1441794, 2, 196768, 1441794, 3, 161, 1245186, 0, 65697, 1245186, 1, 131233, 1245186, 2, 196769, 1245186, 3, 162, 1310722, 0, 65698, 1310722, 1, 131234, 1310722, 2, 196770, 1310722, 3, 163, 1376258, 0, 65699, 1376258, 1, 131235, 1376258, 2, 196771, 1376258, 3, 164, 1441794, 0, 65700, 1441794, 1, 131236, 1441794, 2, 196772, 1441794, 3, 165, 1245186, 0, 65701, 1245186, 1, 131237, 1245186, 2, 196773, 1245186, 3, 166, 1310722, 0, 65702, 1310722, 1, 131238, 1310722, 2, 196774, 1310722, 3, 167, 1376258, 0, 65703, 1376258, 1, 131239, 1376258, 2, 196775, 1376258, 3, 168, 1441794, 0, 65704, 1441794, 1, 131240, 1441794, 2, 196776, 1441794, 3, 262268, 655362, 16, 327804, 655362, 17, 262269, 720898, 16, 327805, 720898, 17, 262270, 786434, 16, 327806, 786434, 17, 262271, 851970, 16, 327807, 851970, 17, 169, 1507330, 0, 65705, 1507330, 1, 131241, 1507330, 2, 196777, 1507330, 3)
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Patrollers/Path2D6" index="0"]
-position = Vector2(1500, 265)
-rotation = 3.14159
-progress = 13500.0
+[node name="enemy" parent="Patrollers" index="6" instance=ExtResource("2_f8riq")]
+position = Vector2(1172, 262)
 
-[node name="bat2" parent="." index="24" instance=ExtResource("3_dsnt2")]
-position = Vector2(1500, 265)
+[node name="enemy2" parent="Patrollers" index="7" instance=ExtResource("2_f8riq")]
+position = Vector2(4405, 260)
+
+[node name="enemy3" parent="Patrollers" index="8" instance=ExtResource("2_f8riq")]
+position = Vector2(5845, 260)
+
+[node name="enemy4" parent="Patrollers" index="9" instance=ExtResource("2_f8riq")]
+position = Vector2(5904, 261)
+
+[node name="enemy5" parent="Patrollers" index="10" instance=ExtResource("2_f8riq")]
+position = Vector2(5955, 261)
+
+[node name="enemy6" parent="Patrollers" index="11" instance=ExtResource("2_f8riq")]
+position = Vector2(6918, 271)
+
+[node name="enemy7" parent="Patrollers" index="12" instance=ExtResource("2_f8riq")]
+position = Vector2(7364, 263)
+
+[node name="enemy8" parent="Patrollers" index="13" instance=ExtResource("2_f8riq")]
+position = Vector2(8385, 263)
+
+[node name="enemy9" parent="Patrollers" index="14" instance=ExtResource("2_f8riq")]
+position = Vector2(9038, 260)
+
+[node name="Marker2D" type="Marker2D" parent="Patrollers" index="15"]
+position = Vector2(0, 100)
+
+[node name="enemy" parent="Patrollers/Marker2D" index="0" instance=ExtResource("3_kxmyk")]
+position = Vector2(2000, 0)
+
+[node name="enemy2" parent="Patrollers/Marker2D" index="1" instance=ExtResource("3_kxmyk")]
+position = Vector2(2695, -100)
+
+[node name="enemy3" parent="Patrollers/Marker2D" index="2" instance=ExtResource("3_kxmyk")]
+position = Vector2(3069, 46)
+
+[node name="enemy4" parent="Patrollers/Marker2D" index="3" instance=ExtResource("3_kxmyk")]
+position = Vector2(3988, -52)
+
+[node name="enemy5" parent="Patrollers/Marker2D" index="4" instance=ExtResource("3_kxmyk")]
+position = Vector2(4562, 50)
+
+[node name="enemy6" parent="Patrollers/Marker2D" index="5" instance=ExtResource("3_kxmyk")]
+position = Vector2(6105, 50)
+
+[node name="enemy7" parent="Patrollers/Marker2D" index="6" instance=ExtResource("3_kxmyk")]
+position = Vector2(6682, -53)
+
+[node name="enemy8" parent="Patrollers/Marker2D" index="7" instance=ExtResource("3_kxmyk")]
+position = Vector2(7548, 47)
+
+[node name="enemy9" parent="Patrollers/Marker2D" index="8" instance=ExtResource("3_kxmyk")]
+position = Vector2(7623, 49)
 
 [node name="moon_pickup" parent="Collectibles" index="0" instance=ExtResource("2_lbp8f")]
 position = Vector2(1586, 141)
@@ -63,9 +113,5 @@ position = Vector2(2461, -4)
 [node name="moon_pickup5" parent="Collectibles" index="5" instance=ExtResource("2_lbp8f")]
 position = Vector2(2645, -5)
 
-[node name="AudioStreamPlayer" parent="." index="26"]
+[node name="AudioStreamPlayer" parent="." index="25"]
 autoplay = false
-
-[node name="bat" parent="." index="27" instance=ExtResource("3_dsnt2")]
-visible = false
-position = Vector2(628, 266)

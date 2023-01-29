@@ -22,7 +22,7 @@ collision_mask = 66
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_zone"]
 shape = SubResource("CircleShape2D_ca5la")
-debug_color = Color(0.352941, 0.109804, 0, 0.176471)
+debug_color = Color(0.352941, 0.109804, 0, 0.0470588)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="detection_zone" to="." method="_on_detection_zone_area_entered"]
