@@ -18,7 +18,8 @@ enum PLAYER_MODES {
 	MENU
 }
 
-signal enemy_hit_player
+signal player_hit_enemy
+signal player_hit_pickup
 
 func _physics_process(_delta):
 	if mode == PLAYER_MODES.PLAY:
@@ -61,11 +62,9 @@ func _on_foot_area_2d_body_exited(_body):
 	player_collider.set_deferred("disabled", false)
 
 
-func _on_area_2d_2_area_entered(area):
-	if area.collision_layer == 4:
-		print("hit_enemy")
+func _on_body_area_area_entered(area):
+	if area.get_collision_layer_value(3):
 		health -= 1
-		emit_signal("enemy_hit_player")
-	elif area.collision_layer == 128:
-		print("hit collectible")
-
+		emit_signal("player_hit_enemy")
+	elif area.get_collision_layer_value(8):
+		emit_signal("player_hit_pickup", 1)

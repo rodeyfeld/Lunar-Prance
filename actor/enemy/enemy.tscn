@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj4h38k3gfex7"]
+[gd_scene load_steps=3 format=3 uid="uid://cj4h38k3gfex7"]
 
 [ext_resource type="Script" path="res://actor/enemy/enemy.gd" id="1_vxcr2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ca5la"]
+radius = 840.051
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_vxcr2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -14,4 +16,13 @@ collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
+[node name="detection_zone" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 66
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_zone"]
+shape = SubResource("CircleShape2D_ca5la")
+debug_color = Color(0.352941, 0.109804, 0, 0.176471)
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="detection_zone" to="." method="_on_detection_zone_area_entered"]

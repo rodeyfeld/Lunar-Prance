@@ -61,9 +61,9 @@ radius = 4.12311
 [node name="bat" instance=ExtResource("1_5r8yh")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-frames = SubResource("SpriteFrames_563cf")
+sprite_frames = SubResource("SpriteFrames_563cf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_abd67")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
