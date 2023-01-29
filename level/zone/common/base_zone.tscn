@@ -91,6 +91,7 @@ texture = SubResource("GradientTexture2D_ctuyh")
 [node name="StarBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, -150)
 transform = Transform2D(1, 0, 0, 1, 0, -150)
+scroll_base_scale = Vector2(0.2, 1)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="StarBackground"]
 motion_scale = Vector2(1, 0.9)
@@ -157,6 +158,7 @@ texture = ExtResource("4_670u4")
 offset = Vector2(600, 125)
 
 [node name="StarBackground2" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2(0.2, 1)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="StarBackground2"]
 motion_scale = Vector2(1, 0.9)
@@ -225,6 +227,7 @@ offset = Vector2(600, 125)
 [node name="StarBackground3" type="ParallaxBackground" parent="."]
 offset = Vector2(0, 150)
 transform = Transform2D(1, 0, 0, 1, 0, 150)
+scroll_base_scale = Vector2(0.2, 1)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="StarBackground3"]
 motion_scale = Vector2(1, 0.9)
@@ -816,9 +819,31 @@ vframes = 28
 region_enabled = true
 region_rect = Rect2(0, 32, 32, 32)
 
-[node name="base_tilemap" parent="." instance=ExtResource("35_1yifv")]
+[node name="base_tilemap" parent="ParallaxGroundBackGroundLight" instance=ExtResource("35_1yifv")]
+
+[node name="forest_decoration1" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="forest_decoration2" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="forest_decoration3" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="stone_blocks_decorations" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="cemetery_decorations1" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="cemetery_decorations2" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="cemetery_decorations3" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="grass_decorations" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="base_ground" parent="." instance=ExtResource("35_1yifv")]
+
+[node name="base_platform" parent="." instance=ExtResource("35_1yifv")]
 
 [node name="Patrollers" type="Node2D" parent="."]
+
+[node name="Collectibles" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_s37r3")

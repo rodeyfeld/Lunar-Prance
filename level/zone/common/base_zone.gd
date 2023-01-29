@@ -6,7 +6,7 @@ extends Node2D
 @onready var moon = $MoonParallaxBackground/ParallaxLayer/Sprite2D
 var reached_apex = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if moon.position.y < -350:
 		reached_apex = true
 		
