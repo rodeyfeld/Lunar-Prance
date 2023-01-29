@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dihihyoyvv4ge"]
+[gd_scene load_steps=7 format=3 uid="uid://dihihyoyvv4ge"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_mxt4a"]
 [ext_resource type="PackedScene" uid="uid://dpd2mh2x0rdh2" path="res://level/zone/zone_1.tscn" id="1_xwgfk"]
 [ext_resource type="PackedScene" uid="uid://wihx5jp6l3tq" path="res://actor/player/player.tscn" id="2_dkhjc"]
 [ext_resource type="Texture2D" uid="uid://hjsm1i0sn6x7" path="res://assets/hud/HeartUIFull.png" id="3_2jaft"]
+[ext_resource type="AudioStream" uid="uid://ch85x68pds4fx" path="res://assets/sound/sound-effects-finger-snap-with-reverb-113861_rrB1LwsF.mp3" id="3_4njng"]
+[ext_resource type="AudioStream" uid="uid://cwnn1tm7yb5mk" path="res://assets/sound/mixkit-short-bass-hit-2299.mp3" id="5_013wo"]
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_mxt4a")
@@ -23,7 +25,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = 550.0
+offset_right = 590.0
 offset_bottom = 40.0
 grow_horizontal = 0
 pivot_offset = Vector2(600, 25)
@@ -33,6 +36,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "0"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="hud_layer/hud/score_container"]
+stream = ExtResource("3_4njng")
 
 [node name="health_container" type="Control" parent="hud_layer/hud"]
 anchors_preset = 0
@@ -47,6 +53,10 @@ texture = ExtResource("3_2jaft")
 region_rect = Rect2(0, 0, 15, 11)
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="hud_layer/hud/health_container"]
+stream = ExtResource("5_013wo")
+volume_db = -20.0
 
 [node name="player" parent="." instance=ExtResource("2_dkhjc")]
 position = Vector2(77, 256)

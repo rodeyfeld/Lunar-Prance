@@ -2,8 +2,10 @@ extends Node2D
 
 #@onready var level = $Base
 @onready var score = $hud_layer/hud/score_container/score_label
+@onready var score_sound = $hud_layer/hud/score_container/AudioStreamPlayer
 @onready var player = $player
 @onready var health_full = $hud_layer/hud/health_container/health_patch
+@onready var health_sound = $hud_layer/hud/health_container/AudioStreamPlayer
 @onready var zone = $base_zone
 const HEART_UI_WIDTH = 15
 const HEART_UI_HEIGHT = 15
@@ -17,8 +19,10 @@ func _ready():
 
 func _on_player_player_hit_enemy():
 	health_full.size.x = HEART_UI_WIDTH * player.health
+	health_sound.play()
 	if player.health <= 0:
 		pass
 
 func _on_player_player_hit_pickup(val):
 	score.text = str(int(score.text) + val)
+	score_sound.play()
