@@ -48,7 +48,16 @@ func jump():
 	audio_player.play()
 	velocity.y -= 200 * jump_modifier
 	animation_player.play("jump")
+	
+func walk():
+	animation_player.play("walk")
 
+func look_around():
+	animation_player.play("look_around")
+
+func look_up():
+	animation_player.play("look_up")
+	
 func _on_foot_area_2d_body_entered(_body):
 	is_on_ground = true
 	player_collider.set_deferred("disabled", false)

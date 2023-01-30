@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5gmw47c0nceb"]
+[gd_scene load_steps=11 format=3 uid="uid://c5gmw47c0nceb"]
 
 [ext_resource type="PackedScene" uid="uid://cj4h38k3gfex7" path="res://actor/enemy/enemy.tscn" id="1_5r8yh"]
 [ext_resource type="Texture2D" uid="uid://dg81t701d1jcv" path="res://assets/enemy/Purple_Flying.png" id="2_202h5"]
@@ -53,18 +53,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_abd67"]
-radius = 4.12311
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_y2bqi"]
 
 [node name="bat" instance=ExtResource("1_5r8yh")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_563cf")
-
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CircleShape2D_abd67")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_y2bqi")
