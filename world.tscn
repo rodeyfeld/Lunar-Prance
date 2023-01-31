@@ -39,6 +39,7 @@ text = "0"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="hud_layer/hud/score_container"]
 stream = ExtResource("3_4njng")
+volume_db = 20.0
 
 [node name="health_container" type="Control" parent="hud_layer/hud"]
 anchors_preset = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ctrcaf3beyllm"]
+[gd_scene load_steps=46 format=3 uid="uid://ctrcaf3beyllm"]
 
 [ext_resource type="Script" path="res://level/zone/common/base_zone.gd" id="1_817lb"]
 [ext_resource type="Texture2D" uid="uid://ccoms1esqtb6k" path="res://assets/The pale moonlight/Image Sheets/base_grass_tiles.png" id="2_sq64g"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://batxbga725sra" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_16.png" id="24_y6ina"]
 [ext_resource type="Texture2D" uid="uid://deof1onynls3t" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_17.png" id="24_yeb08"]
 [ext_resource type="Texture2D" uid="uid://byetuw841rkdj" path="res://assets/The pale moonlight/Separate images/Sky/Cumulus_Cloud_15.png" id="25_yjbae"]
-[ext_resource type="AudioStream" uid="uid://d4j57xorxsqcu" path="res://assets/sound/level_music.mp3" id="34_s37r3"]
 [ext_resource type="PackedScene" uid="uid://cu5yik8gbqa5w" path="res://level/zone/common/base_tilemap.tscn" id="35_1yifv"]
 
 [sub_resource type="Gradient" id="Gradient_3xcm0"]
@@ -827,6 +826,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1280, 32)
 
 [node name="ParallaxGroundBackGround" type="ParallaxBackground" parent="."]
+layer = 100
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxGroundBackGround"]
 motion_mirroring = Vector2(640, 0)
@@ -842,6 +842,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="ParallaxGroundBackGroundLight" type="ParallaxBackground" parent="."]
+layer = 100
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxGroundBackGroundLight"]
 motion_mirroring = Vector2(640, 0)
@@ -898,8 +899,3 @@ curve = SubResource("Curve2D_h40hh")
 curve = SubResource("Curve2D_8vskn")
 
 [node name="Collectibles" type="Node2D" parent="."]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("34_s37r3")
-volume_db = -5.0
-autoplay = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpd2mh2x0rdh2"]
+[gd_scene load_steps=6 format=3 uid="uid://dpd2mh2x0rdh2"]
 
 [ext_resource type="PackedScene" uid="uid://ctrcaf3beyllm" path="res://level/zone/common/base_zone.tscn" id="1_tjev5"]
 [ext_resource type="PackedScene" uid="uid://bl85asqssx3ae" path="res://actor/enemy/zombie/zombie.tscn" id="2_f8riq"]
 [ext_resource type="PackedScene" uid="uid://ct0gxxtere53a" path="res://pickups/moon_pickup.tscn" id="2_lbp8f"]
 [ext_resource type="PackedScene" uid="uid://3ra8nkf02acc" path="res://actor/enemy/wraith/wraith.tscn" id="3_kxmyk"]
+[ext_resource type="AudioStream" uid="uid://d4j57xorxsqcu" path="res://assets/sound/level_music.mp3" id="5_tmxw2"]
 
 [node name="base_zone" instance=ExtResource("1_tjev5")]
 metadata/_edit_vertical_guides_ = [15004.0]
@@ -143,5 +144,7 @@ position = Vector2(4460, 48)
 [node name="moon_pickup11" parent="Collectibles" index="15" instance=ExtResource("2_lbp8f")]
 position = Vector2(3966, 275)
 
-[node name="AudioStreamPlayer" parent="." index="25"]
-autoplay = false
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="25"]
+stream = ExtResource("5_tmxw2")
+volume_db = -5.0
+autoplay = true

@@ -1,9 +1,9 @@
 extends Node2D
 
 const level_1 = "res://world.tscn"
-@onready var player = $content/player_container/player
-@onready var player_action_timer = $content/player_container/player/player_action_timer
-@onready var player_walk_timer = $content/player_container/player/player_walk_timer
+@onready var player = $player
+@onready var player_action_timer = $player/player_action_timer
+@onready var player_walk_timer = $player/player_walk_timer
 
 
 
