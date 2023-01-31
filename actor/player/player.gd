@@ -23,6 +23,7 @@ enum PLAYER_MODES {
 
 signal player_hit_enemy
 signal player_hit_pickup
+signal player_complete_level
 
 func _physics_process(_delta):
 	if mode == PLAYER_MODES.PLAY and is_alive:
@@ -85,6 +86,10 @@ func _on_foot_area_2d_body_exited(_body):
 func _on_body_area_area_entered(area):
 	if area.get_collision_layer_value(3):
 		health -= 1
+		print(health)
 		emit_signal("player_hit_enemy")
 	elif area.get_collision_layer_value(8):
 		emit_signal("player_hit_pickup", 1)
+	elif area.get_collision_layer_value(10):
+		print("done")
+		emit_signal("player_complete_level")

@@ -37,6 +37,3 @@ flip_h = true
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(-2, 9)
 shape = SubResource("CapsuleShape2D_jk6kc")
-
-[node name="detection_zone" parent="." index="2"]
-visible = false

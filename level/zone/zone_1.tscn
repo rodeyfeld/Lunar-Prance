@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpd2mh2x0rdh2"]
+[gd_scene load_steps=7 format=3 uid="uid://dpd2mh2x0rdh2"]
 
 [ext_resource type="PackedScene" uid="uid://ctrcaf3beyllm" path="res://level/zone/common/base_zone.tscn" id="1_tjev5"]
 [ext_resource type="PackedScene" uid="uid://bl85asqssx3ae" path="res://actor/enemy/zombie/zombie.tscn" id="2_f8riq"]
 [ext_resource type="PackedScene" uid="uid://ct0gxxtere53a" path="res://pickups/moon_pickup.tscn" id="2_lbp8f"]
 [ext_resource type="PackedScene" uid="uid://3ra8nkf02acc" path="res://actor/enemy/wraith/wraith.tscn" id="3_kxmyk"]
 [ext_resource type="AudioStream" uid="uid://d4j57xorxsqcu" path="res://assets/sound/level_music.mp3" id="5_tmxw2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gut2x"]
+height = 4736.0
 
 [node name="base_zone" instance=ExtResource("1_tjev5")]
 metadata/_edit_vertical_guides_ = [15004.0]
@@ -45,37 +48,34 @@ position = Vector2(1172, 262)
 [node name="enemy11" parent="Patrollers" index="7" instance=ExtResource("2_f8riq")]
 position = Vector2(656, 261)
 
-[node name="enemy12" parent="Patrollers" index="8" instance=ExtResource("2_f8riq")]
-position = Vector2(656, 261)
-
-[node name="enemy2" parent="Patrollers" index="9" instance=ExtResource("2_f8riq")]
+[node name="enemy2" parent="Patrollers" index="8" instance=ExtResource("2_f8riq")]
 position = Vector2(4405, 260)
 
-[node name="enemy3" parent="Patrollers" index="10" instance=ExtResource("2_f8riq")]
+[node name="enemy3" parent="Patrollers" index="9" instance=ExtResource("2_f8riq")]
 position = Vector2(5845, 260)
 
-[node name="enemy4" parent="Patrollers" index="11" instance=ExtResource("2_f8riq")]
+[node name="enemy4" parent="Patrollers" index="10" instance=ExtResource("2_f8riq")]
 position = Vector2(5904, 261)
 
-[node name="enemy5" parent="Patrollers" index="12" instance=ExtResource("2_f8riq")]
+[node name="enemy5" parent="Patrollers" index="11" instance=ExtResource("2_f8riq")]
 position = Vector2(5955, 261)
 
-[node name="enemy6" parent="Patrollers" index="13" instance=ExtResource("2_f8riq")]
+[node name="enemy6" parent="Patrollers" index="12" instance=ExtResource("2_f8riq")]
 position = Vector2(6918, 262)
 
-[node name="enemy7" parent="Patrollers" index="14" instance=ExtResource("2_f8riq")]
+[node name="enemy7" parent="Patrollers" index="13" instance=ExtResource("2_f8riq")]
 position = Vector2(7364, 263)
 
-[node name="enemy8" parent="Patrollers" index="15" instance=ExtResource("2_f8riq")]
+[node name="enemy8" parent="Patrollers" index="14" instance=ExtResource("2_f8riq")]
 position = Vector2(8385, 263)
 
-[node name="enemy9" parent="Patrollers" index="16" instance=ExtResource("2_f8riq")]
+[node name="enemy9" parent="Patrollers" index="15" instance=ExtResource("2_f8riq")]
 position = Vector2(9038, 260)
 
-[node name="enemy10" parent="Patrollers" index="17" instance=ExtResource("2_f8riq")]
+[node name="enemy10" parent="Patrollers" index="16" instance=ExtResource("2_f8riq")]
 position = Vector2(9306, 263)
 
-[node name="Marker2D" type="Marker2D" parent="Patrollers" index="18"]
+[node name="Marker2D" type="Marker2D" parent="Patrollers" index="17"]
 position = Vector2(0, 100)
 
 [node name="enemy" parent="Patrollers/Marker2D" index="0" instance=ExtResource("3_kxmyk")]
@@ -226,3 +226,10 @@ position = Vector2(3966, 275)
 stream = ExtResource("5_tmxw2")
 volume_db = -5.0
 autoplay = true
+
+[node name="Finish" parent="." index="26"]
+position = Vector2(14595, 214)
+
+[node name="CollisionShape2D" parent="Finish/Area2D" index="0"]
+position = Vector2(-300, -387)
+shape = SubResource("CapsuleShape2D_gut2x")

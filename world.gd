@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const death_screen = "" 
+const main_menu = "res://level/zone/main_menu.tscn"
 const level_1 = "res://world.tscn"
 @onready var final_score = $hud_layer/Control/GridContainer/Label
 @onready var world_animation_player = $AnimationPlayer
@@ -20,9 +20,13 @@ const HEART_UI_HEIGHT = 15
 
 func _ready():
 	health_full.size.x = HEART_UI_WIDTH * player.health
-	print(player.health)
-	player.global_position.x = 200
+#	player.global_position.x = 200
 
+func _physics_process(delta):
+	if !player.is_alive:
+		if Input.is_action_just_pressed("jump"):
+			get_tree().change_scene_to_file(main_menu)
+		
 func die():
 	camera.current = false
 	player.die()
@@ -31,7 +35,6 @@ func die():
 func _on_player_player_hit_enemy():
 	health_full.size.x = HEART_UI_WIDTH * player.health
 	health_sound.play()
-	player.health -= 1 
 	if player.health <= 0:
 		die()
 
@@ -41,7 +44,10 @@ func _on_player_player_hit_pickup(val):
 	score_sound.play()
 
 
+
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "reset_to_menu":
 		pass
 		
+func _on_player_player_complete_level():
+	die()

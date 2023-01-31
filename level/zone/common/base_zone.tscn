@@ -898,3 +898,11 @@ curve = SubResource("Curve2D_h40hh")
 curve = SubResource("Curve2D_8vskn")
 
 [node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Finish" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Finish"]
+collision_layer = 512
+collision_mask = 66
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish/Area2D"]
