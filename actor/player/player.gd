@@ -7,10 +7,13 @@ class_name Player
 @onready var player_collider = $PlayerCollider
 @onready var foot_area = $FootArea2D
 @onready var audio_player = $AudioStreamPlayer
-@onready @export var health = 5
+@onready var death_emmiter = $CPUParticles2D
+@onready var body_collider = $BodyArea/CollisionShape2D
+@export var health:int = 5
 var MAX_SPEED = 100
 var jump_modifier = 1.0
 var is_on_ground = true
+var is_alive = true
 @export var mode = PLAYER_MODES.MENU
 
 enum PLAYER_MODES {
@@ -22,7 +25,7 @@ signal player_hit_enemy
 signal player_hit_pickup
 
 func _physics_process(_delta):
-	if mode == PLAYER_MODES.PLAY:
+	if mode == PLAYER_MODES.PLAY and is_alive:
 		velocity.y += 6
 		velocity.x = MAX_SPEED
 		if Input.is_action_just_pressed("jump"):
@@ -57,6 +60,14 @@ func look_around():
 
 func look_up():
 	animation_player.play("look_up")
+	
+func die():
+	is_alive = false
+	death_emmiter.emitting = true
+	body_collider.set_deferred("disabled", true)
+	velocity.x = 0
+	animation_player.play("die")
+	
 	
 func _on_foot_area_2d_body_entered(_body):
 	is_on_ground = true

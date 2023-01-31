@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b6r6hfesjlutg"]
+
+[node name="death_screen" type="Node2D"]

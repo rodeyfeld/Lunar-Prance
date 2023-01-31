@@ -328,16 +328,6 @@ offset = Vector2(500, 125)
 texture = ExtResource("4_670u4")
 offset = Vector2(600, 125)
 
-[node name="MoonParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_base_scale = Vector2(0.05, 0.6)
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="MoonParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="MoonParallaxBackground/ParallaxLayer"]
-position = Vector2(600, 250)
-texture = ExtResource("7_8dv4x")
-offset = Vector2(600, 0)
-
 [node name="CloudBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CloudBackground"]
@@ -744,6 +734,15 @@ texture = ExtResource("20_25bi3")
 [node name="Sprite2D4" type="Sprite2D" parent="CloudBackground/ParallaxLayer4/Node2D4"]
 position = Vector2(359, 30)
 texture = ExtResource("9_pey6o")
+
+[node name="MoonParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_scale = Vector2(0.06, 0.5)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="MoonParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonParallaxBackground/ParallaxLayer"]
+position = Vector2(613, 239)
+texture = ExtResource("7_8dv4x")
 
 [node name="Mountains" type="ParallaxBackground" parent="."]
 scroll_base_scale = Vector2(0.4, 1)
