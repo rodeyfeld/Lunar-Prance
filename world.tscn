@@ -65,7 +65,9 @@ mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(243, -75)
+offset = Vector2(0, 100)
 current = true
+limit_bottom = 250
 limit_smoothed = true
 drag_vertical_enabled = true
 editor_draw_limits = true
