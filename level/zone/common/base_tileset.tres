@@ -2934,6 +2934,12 @@ texture = ExtResource("1_2sv2s")
 11:27/0/physics_layer_0/angular_velocity = 0.0
 11:27/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 11:27/0/physics_layer_1/angular_velocity = 0.0
+23:27/0 = 0
+23:27/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+23:27/0/physics_layer_0/angular_velocity = 0.0
+23:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+23:27/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+23:27/0/physics_layer_1/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxtm5"]
 resource_name = "structures_physics"
@@ -3866,6 +3872,7 @@ texture = ExtResource("1_2sv2s")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_1/angular_velocity = 0.0
 1:0/0 = 0

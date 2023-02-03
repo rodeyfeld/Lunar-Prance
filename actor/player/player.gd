@@ -14,6 +14,8 @@ var MAX_SPEED = 100
 var jump_modifier = 1.0
 var is_on_ground = true
 var is_alive = true
+var max_jumps = 3
+var curr_jumps = max_jumps
 @export var mode = PLAYER_MODES.MENU
 
 enum PLAYER_MODES {
@@ -42,16 +44,18 @@ func _physics_process(_delta):
 			animation_player.play("run")
 		
 		if is_on_floor():
-			jump_modifier = 1
-		elif jump_modifier >= 0:
-			jump_modifier -= .005
+#			jump_modifier = 1
+			curr_jumps = max_jumps
 	
 	move_and_slide()
 
 func jump():
-	audio_player.play()
-	velocity.y -= 200 * jump_modifier
-	animation_player.play("jump")
+	if curr_jumps > 0:
+			
+		audio_player.play()
+		velocity.y -= 200
+		curr_jumps -= 1
+		animation_player.play("jump")
 	
 func walk():
 	animation_player.play("walk")

@@ -87,7 +87,8 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="hud_layer/Control/GridContainer"]
 layout_mode = 2
-text = "Press Space"
+size_flags_horizontal = 4
+text = "Press Space or Tap"
 horizontal_alignment = 1
 vertical_alignment = 1
 
