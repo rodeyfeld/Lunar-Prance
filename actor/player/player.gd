@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 class_name Player
-
 @onready var animation_player = $BodyArea/AnimationPlayer
+@onready var jump_particles = $jump_particles
 @onready var jump_timer = $JumpTimer
 @onready var player_collider = $PlayerCollider
 @onready var foot_area = $FootArea2D
@@ -51,7 +51,8 @@ func _physics_process(_delta):
 
 func jump():
 	if curr_jumps > 0:
-			
+		jump_particles.emitting = true
+		jump_particles.restart()
 		audio_player.play()
 		velocity.y -= 200
 		curr_jumps -= 1

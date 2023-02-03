@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://wihx5jp6l3tq"]
+[gd_scene load_steps=18 format=3 uid="uid://wihx5jp6l3tq"]
 
 [ext_resource type="Script" path="res://actor/player/player.gd" id="1_ar66k"]
 [ext_resource type="AudioStream" uid="uid://b87lxve0nrdmr" path="res://assets/sound/chime.mp3" id="3_eill1"]
 [ext_resource type="Texture2D" uid="uid://cmj486fsabvq8" path="res://assets/player/spritesheet.png" id="3_sfmoc"]
+[ext_resource type="PackedScene" uid="uid://bwbnqlv1cpu1p" path="res://actor/player/jump_particles.tscn" id="4_kbrhe"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_am5b4"]
 radius = 5.0
@@ -260,7 +261,14 @@ scale_amount_min = 5.0
 scale_amount_max = 5.0
 color_ramp = SubResource("Gradient_mo00l")
 
+[node name="jump_particles" parent="." instance=ExtResource("4_kbrhe")]
+position = Vector2(0, 25)
+emitting = false
+one_shot = true
+
 [connection signal="body_entered" from="FootArea2D" to="." method="_on_foot_area_2d_body_entered"]
 [connection signal="body_exited" from="FootArea2D" to="." method="_on_foot_area_2d_body_exited"]
 [connection signal="area_entered" from="BodyArea" to="." method="_on_body_area_area_entered"]
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+
+[editable path="jump_particles"]
