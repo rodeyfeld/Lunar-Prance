@@ -1,10 +1,13 @@
 LUNAR PRANCE: A game by rodeyfeld.
 
-Simple side scrolling game in Godot. Avoid the enemies to stay alive, get pickups for points. Lose all health and the game ends with an option to restart. 
+Simple side scrolling game in Godot. Avoid the enemies to stay alive, get pickups for points. Click to jump.
+Lose all health and the game ends with an option to restart. 
+- music mixed by rodeyfeld.
+- programming by rodeyfeld.
+- art sourced from various itch.io assets.
 
-music mixed by rodeyfeld.
-programming by rodeyfeld.
-Art sourced from various itch.io assets.
+Game:
+
 https://rodeyfeld.itch.io/lunar-prance
 
 ![image](https://github.com/user-attachments/assets/2a03ca2b-5b25-438c-bb82-e2569e57e473)
